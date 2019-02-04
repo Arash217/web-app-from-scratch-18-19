@@ -10,9 +10,13 @@ Doel: Data ophalen uit een API en renderen in een overzichtspagina.
 
 Doel: Breakdown maken van de web app. Routes en states toevoegen. Detailpagina renderen.
 
+[Week 2 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week2)
+
 ### Week 3 - Wrapping up 🎁
 
 Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
+
+[Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
