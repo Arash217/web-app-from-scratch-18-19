@@ -46,8 +46,6 @@ TODO
 - CamelCase
 - Constanten en variabelen bovenaan definiëren
 
-TODO
-
 ### Wishlist
 
 TODO
