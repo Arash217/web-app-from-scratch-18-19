@@ -1,4 +1,4 @@
-## Web app from scratch
+# Web app from scratch
 
 ### Week 1 - Hello API 🐒
 
