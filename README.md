@@ -22,6 +22,25 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 Gegevens van landen worden middels een API opgehaald en getoond.
 
+### Actordiagram
+
+TODO
+
+### API
+
+TODO
+
+### Interaction diagram
+
+TODO
+
+### Gebruikte design patterns en best practices
+
+TODO
+
+### Wishlist
+
+TODO
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
