@@ -26,7 +26,7 @@ Gegevens van landen worden middels een API opgehaald en getoond.
 
 TODO
 
-### API
+### Gebruikte API
 
 TODO
 
