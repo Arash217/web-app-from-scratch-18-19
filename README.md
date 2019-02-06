@@ -22,7 +22,7 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 ### Doel van de app
 
-Gegevens van landen worden middels een API opgehaald en getoond.
+Gegevens van landen worden middels een API opgehaald en vervolgens getoond.
 
 ### Actordiagram
 
@@ -30,7 +30,9 @@ TODO
 
 ### Gebruikte API
 
-TODO
+URL: https://restcountries.eu/
+
+API Beperkingen zijn niet gespecificeerd.
 
 ### Interaction diagram
 
@@ -38,19 +40,23 @@ TODO
 
 ### Gebruikte design patterns en best practices
 
+- Strict mode
+- IIFE
+- Constanten gebruiken om niet bedoelde overschrijvingen te voorkomen
+- CamelCase
+- Constanten en variabelen bovenaan definiëren
+
 TODO
 
 ### Wishlist
 
 TODO
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
-
-<!-- ☝️ replace this description with a description of your own work -->
-
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+<!-- Waarom??? -->
 
 <!-- Maybe a table of contents here? 📚 -->
+<!-- Echt nodig?? -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 
