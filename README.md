@@ -18,6 +18,11 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
 
+### Doel van de app
+
+Gegevens van landen worden middels een API opgehaald en getoond.
+
+
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
 <!-- ☝️ replace this description with a description of your own work -->
