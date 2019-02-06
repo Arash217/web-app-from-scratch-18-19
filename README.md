@@ -1,5 +1,3 @@
-# Web app from scratch
-
 ## Opdrachten
 
 ### Week 1 - Hello API 🐒
