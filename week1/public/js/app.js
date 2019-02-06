@@ -8,14 +8,14 @@
         return await response.json();
     };
 
-    const createCountryNode = (country) => {
+    const getCountryNode = ({flag, name}) => {
         const container = document.createElement('div');
         const countryFlag = document.createElement('img');
         const countryName = document.createElement('p');
 
         container.className = 'country';
-        countryFlag.src = country.flag;
-        countryName.innerText = country.name;
+        countryFlag.src = flag;
+        countryName.innerText = name;
 
         container.appendChild(countryFlag);
         container.appendChild(countryName);
@@ -26,9 +26,7 @@
     const render = async () => {
         const data = await fetchData();
         const main = document.querySelector('main');
-        data.forEach(country => {
-            main.appendChild(createCountryNode(country));
-        });
+        data.forEach(country => main.appendChild(getCountryNode(country)));
     };
 
     render();
