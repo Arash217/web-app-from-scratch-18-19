@@ -1,5 +1,7 @@
 # Web app from scratch
 
+## Opdrachten
+
 ### Week 1 - Hello API 🐒
 
 Doel: Data ophalen uit een API en renderen in een overzichtspagina.
@@ -17,6 +19,8 @@ Doel: Breakdown maken van de web app. Routes en states toevoegen. Detailpagina r
 Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
+
+## Beschrijving
 
 ### Doel van de app
 
