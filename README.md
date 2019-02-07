@@ -10,13 +10,13 @@ Doel: Data ophalen uit een API en renderen in een overzichtspagina.
 
 Doel: Breakdown maken van de web app. Routes en states toevoegen. Detailpagina renderen.
 
-[Week 2 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week2)
+<!-- [Week 2 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week2) -->
 
 ### Week 3 - Wrapping up 🎁
 
 Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
-[Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
+<!-- [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3) -->
 
 ## Beschrijving
 
@@ -24,19 +24,27 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 Gegevens van landen worden middels een API opgehaald en vervolgens getoond.
 
+<!--
+
 ### Actordiagram
 
 TODO
+
+ -->
 
 ### Gebruikte API
 
 URL: https://restcountries.eu/
 
-API Beperkingen zijn niet gespecificeerd.
+API Beperkingen zijn niet beschreven in de documentatie.
+
+<!--
 
 ### Interaction diagram
 
 TODO
+
+ -->
 
 ### Gebruikte design patterns en best practices
 
@@ -46,9 +54,13 @@ TODO
 - CamelCase
 - Constanten en variabelen bovenaan definiëren
 
+<!--
+
 ### Wishlist
 
 TODO
+
+ -->
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 <!-- Waarom??? -->
