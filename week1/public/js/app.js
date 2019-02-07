@@ -1,9 +1,8 @@
 (() => {
     'use strict';
 
-    const API_URL = 'https://restcountries.eu/rest/v2/all';
-
     const fetchData = async () => {
+        const API_URL = 'https://restcountries.eu/rest/v2/all';
         const response = await fetch(API_URL);
         return await response.json();
     };
