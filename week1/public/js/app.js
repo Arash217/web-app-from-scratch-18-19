@@ -12,7 +12,7 @@
         const countryFlag = document.createElement('img');
         const countryName = document.createElement('p');
 
-        container.className = 'country';
+        container.classList.add('country');
         countryFlag.src = flag;
         countryName.innerText = name;
 
@@ -22,10 +22,21 @@
         return container;
     };
 
+    const getCountriesNode = (data) => {
+        const container = document.createElement('div');
+        const countriesNodes = data.map(country => getCountryNode(country));
+
+        container.classList.add('countries');
+        countriesNodes.forEach((countryNode) => container.appendChild(countryNode));
+
+        return container;
+    };
+
     const render = async () => {
         const data = await fetchData();
         const main = document.querySelector('main');
-        data.forEach(country => main.appendChild(getCountryNode(country)));
+        const countriesNode = getCountriesNode(data);
+        main.appendChild(countriesNode);
     };
 
     render();
