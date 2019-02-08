@@ -22,10 +22,11 @@
         return container;
     };
 
-    /* Render */
-    (async () => {
+    const render = async () => {
         const data = await fetchData();
         const main = document.querySelector('main');
         data.forEach(country => main.appendChild(getCountryNode(country)));
-    })();
+    };
+
+    render();
 })();
