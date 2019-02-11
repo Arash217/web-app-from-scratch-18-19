@@ -7,6 +7,29 @@
 </head>
 <body>
     <main></main>
-    <script type="text/javascript" src="public/js/app.js"></script>
+
+    <script id="homeTemplate" type="text/x-handlebars-template">
+        <div id="countries">
+            {{#each this}}
+
+            <div class="country">
+                <img src="{{flag}}">
+                <a href="#countries/{{alpha2Code}}">{{name}}</a>
+            </div>
+
+            {{/each}}
+        </div>
+    </script>
+
+    <script id="detailsTemplate" type="text/x-handlebars-template">
+        <div>
+            <img src="{{flag}}">
+            <p>{{name}}</p>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+    <script type="module" src="public/js/app.js"></script>
 </body>
 </html>
