@@ -27,7 +27,7 @@
         const countriesNodes = data.map(country => getCountryNode(country));
 
         container.classList.add('countries');
-        countriesNodes.forEach((countryNode) => container.appendChild(countryNode));
+        countriesNodes.forEach(countryNode => container.appendChild(countryNode));
 
         return container;
     };
