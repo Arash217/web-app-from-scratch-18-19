@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.countries {
+#countries {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
