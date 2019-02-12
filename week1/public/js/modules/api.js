@@ -1,3 +1,5 @@
+import data from './data.js';
+
 const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 
 const getAll = async () => {
@@ -10,7 +12,29 @@ const get = async (code) => {
     return response.json();
 };
 
-export default {
-    getAll,
-    get
+const apiProxy = {
+    async getAll() {
+        const countries = data.getCountries();
+
+        if (countries.length > 0) {
+            return data.getCountries();
+        }
+
+        const res = await getAll();
+        data.setCountries(res);
+
+        return res;
+    },
+
+    async get(code) {
+        const country = data.getCountry(code);
+
+        if (country !== null) {
+            return country;
+        }
+
+        return await get(code);
+    }
 };
+
+export default apiProxy;
