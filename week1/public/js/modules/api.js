@@ -6,7 +6,7 @@ const api = {
         return response.json();
     },
 
-    async get() {
+    async get(code){
         const response = await fetch(`${BASE_API_URL}/alpha/${code}?fields=name;flag`);
         return response.json();
     }
