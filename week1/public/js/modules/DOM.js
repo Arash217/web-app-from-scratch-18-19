@@ -1,23 +1,32 @@
+import utils from './utils.js';
+
+const MAIN_ELEMENT = 'main';
+const SEARCH_INPUT_ID = 'search-input';
+
+const getSearchInput = () => {
+    return document.querySelector(`#${SEARCH_INPUT_ID}`);
+};
+
+const getMainElement = () => {
+    return document.querySelector(MAIN_ELEMENT);
+};
+
 const renderToDOM = (data, elementId) => {
-    const main = document.querySelector('main');
+    const main = getMainElement();
     const template = document.querySelector(elementId).innerHTML;
     const compiledTemplate = Handlebars.compile(template);
     main.innerHTML = compiledTemplate(data);
-};
-
-const getSearchInput = () => {
-    return document.querySelector('#search-input');
 };
 
 const filterCountries = (countries, countryName) => {
     return countries.filter(country => country.name.toLowerCase().includes(countryName.toLowerCase()));
 };
 
-const handleForm = (countries) => {
-    const main = document.querySelector('main');
+const handleSearch = (countries) => {
+    const main = getMainElement();
 
-    main.addEventListener('click', ({target: {id}}) => {
-        if (id === 'search') {
+    const inputEventHandler = ({target: {id}}) => {
+        if (id === SEARCH_INPUT_ID) {
             const {value: searchInputValue} = getSearchInput();
             const foundCountries = filterCountries(countries, searchInputValue);
 
@@ -25,13 +34,16 @@ const handleForm = (countries) => {
 
             const newSearchInput = getSearchInput();
             newSearchInput.value = searchInputValue;
+            newSearchInput.focus();
         }
-    });
+    };
+
+    main.addEventListener('input', utils.debounce(inputEventHandler, 300));
 };
 
 const renderHomePage = countries => {
     renderToDOM(countries, '#homeTemplate');
-    handleForm(countries);
+    handleSearch(countries);
 };
 
 const renderDetailsPage = country => renderToDOM(country, '#detailsTemplate');
