@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Countries</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
@@ -16,19 +17,24 @@
         <div id="countries">
             {{#each this}}
 
-            <div class="country">
-                <img src="{{flag}}">
-                <a href="#countries/{{alpha2Code}}">{{name}}</a>
-            </div>
+            <a href="#countries/{{alpha2Code}}">
+                <div class="country">
+                    <img src="{{flag}}">
+                    <p>{{name}}</p>
+                </div>
+            </a>
 
             {{/each}}
         </div>
     </script>
 
     <script id="detailsTemplate" type="text/x-handlebars-template">
-        <div>
-            <img src="{{flag}}">
-            <p>{{name}}</p>
+        <nav>
+            <a href="#home">Go back</a>
+        </nav>
+        <div class="details-container">
+            <h1 class="country-title">{{name}}</h1>
+            <img src="{{flag}}" class="country-flag">
         </div>
     </script>
 
