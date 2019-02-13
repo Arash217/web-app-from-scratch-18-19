@@ -9,7 +9,9 @@
     <main></main>
 
     <script id="homeTemplate" type="text/x-handlebars-template">
-        <input type="text" id="search-input"/>
+        <div id="search-input-container">
+            <input type="text" id="search-input" placeholder="Search for a country..."/>
+        </div>
 
         <div id="countries">
             {{#each this}}
