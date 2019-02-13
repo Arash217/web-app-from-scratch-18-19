@@ -7,7 +7,7 @@ const pages = {
         DOM.renderHomePage(countries);
     },
 
-    async details(code){
+    async details(code) {
         const country = await apiProxy.get(code);
         DOM.renderDetailsPage(country);
     }

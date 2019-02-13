@@ -42,7 +42,7 @@ const DOM = {
         handleSearch(countries);
     },
 
-    renderDetailsPage(country){
+    renderDetailsPage(country) {
         utils.renderTemplate(country, DETAILS_TEMPLATE_ID, MAIN_ELEMENT);
     }
 };
