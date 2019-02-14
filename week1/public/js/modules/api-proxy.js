@@ -1,28 +1,28 @@
 import api from './api.js';
-import data from './data.js';
+import cache from './cache.js';
 
 const apiProxy = {
     async getAll() {
-        const countries = data.getCountries();
+        const cachedCountries = cache.getCountries();
 
-        if (countries.length > 0) {
-            return data.getCountries();
+        if (cachedCountries.length > 0) {
+            return cachedCountries;
         }
 
-        const res = await api.getAll();
-        data.setCountries(res);
+        const countries = await api.getAll();
+        cache.setCountries(countries);
 
-        return res;
+        return countries;
     },
 
     async get(code) {
-        const country = data.getCountry(code);
+        const country = cache.getCountry(code);
 
         if (country !== null) {
             return country;
         }
 
-        return await api.get(code);
+        return api.get(code);
     }
 };
 
