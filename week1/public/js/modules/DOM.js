@@ -7,7 +7,7 @@ const HOME_TEMPLATE_ID = '#homeTemplate';
 const DETAILS_TEMPLATE_ID = '#detailsTemplate';
 
 let _countries = [];
-let userSearch = '';
+let searchString = '';
 let sortAscending = true;
 
 const getMainElement = () => {
@@ -18,63 +18,54 @@ const getSearchInput = () => {
     return utils.getElement(`#${SEARCH_INPUT_ID}`);
 };
 
-const filterCountries = (countries, countryName) => {
-    return countries.filter(country => country.name.toLowerCase().includes(countryName.toLowerCase()));
+const findCountries = (countries, string) => {
+    return countries.filter(country => country.name.toLowerCase().includes(string.toLowerCase()));
 };
 
 const sortCountries = (countries, sortAscending) => {
-    return countries.sort((country1, country2) => {
-        if (sortAscending){
-            return country1.name.localeCompare(country2.name)
-        }
-       return country2.name.localeCompare(country1.name)
-    })
+    return sortAscending ? countries : [...countries].reverse();
 };
 
-const renderToDOM = () => {
-    const foundCountries = filterCountries(_countries, userSearch);
-    const filteredCountries = sortCountries(foundCountries, sortAscending);
-    utils.renderTemplate(filteredCountries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
-
+const renderCountries = countries => {
+    utils.renderTemplate(countries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
     const newSearchInput = getSearchInput();
-    newSearchInput.value = userSearch;
+    newSearchInput.value = searchString;
 };
 
-const addSearchInputEventListener = () => {
-    const main = getMainElement();
+const filter = () => {
+    const foundCountries = findCountries(_countries, searchString);
+    const filteredCountries = sortCountries(foundCountries, sortAscending);
+    renderCountries(filteredCountries);
+};
 
+const addSearchInputEventListener = element => {
     const inputEventHandler = ({target: {id}}) => {
         if (id === SEARCH_INPUT_ID) {
-            const {value: inputValue} = getSearchInput();
-
-            userSearch = inputValue;
-
-            renderToDOM();
-
-            const newSearchInput = getSearchInput();
-            newSearchInput.focus();
+            const {value} = getSearchInput();
+            searchString = value;
+            filter();
+            getSearchInput().focus();
         }
     };
 
-    main.addEventListener('input', utils.debounce(inputEventHandler, 300));
+    element.addEventListener('input', utils.debounce(inputEventHandler, 300));
 };
 
-const addSortButtonEventListener = () => {
-    const main = getMainElement();
-
+const addSortButtonEventListener = element => {
     const clickEventHandler = ({target: {id}}) => {
         if (id === SORT_BUTTON_ID) {
-            sortAscending =! sortAscending;
-            renderToDOM();
+            sortAscending = !sortAscending;
+            filter();
         }
     };
 
-    main.addEventListener('click', clickEventHandler);
+    element.addEventListener('click', clickEventHandler);
 };
 
 const initEventListeners = () => {
-    addSearchInputEventListener();
-    addSortButtonEventListener();
+    const main = getMainElement();
+    addSearchInputEventListener(main);
+    addSortButtonEventListener(main);
 };
 
 const DOM = {
