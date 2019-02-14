@@ -36,6 +36,56 @@
         <div class="details-container">
             <h1 class="country-title">{{name}}</h1>
             <img src="{{flag}}" class="country-flag">
+            <div>
+                <div>
+                    <span>Capital</span>
+                    <span>{{capital}}</span>
+                </div>
+                <div>
+                    <span>Region</span>
+                    <span>{{region}}</span>
+                </div>
+                <div>
+                    <span>Subregion</span>
+                    <span>{{subregion}}</span>
+                </div>
+                <div>
+                    <span>Lat/long</span>
+                    <span>{{latlng}}</span>
+                </div>
+
+                {{#each this.timezones}}
+                    <div>
+                        <span>{{this}}</span>
+                    </div>
+                {{/each}}
+
+                {{#each this.currencies}}
+                    <div>
+                        <div>
+                            <span>Code</span>
+                            <span>{{this.code}}</span>
+                        </div>
+                        <div>
+                            <span>Name</span>
+                            <span>{{this.name}}</span>
+                        </div>
+                        <div>
+                            <span>Symbol</span>
+                            <span>{{this.symbol}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+
+                {{#each this.languages}}
+                    <div>
+                        <div>
+                            <span>Name</span>
+                            <span>{{this.name}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
     </script>
 
