@@ -4,28 +4,32 @@ import cache from './cache.js';
 /* TODO new caching strategy */
 /* Used the proxy pattern for caching data */
 
+let cachedCountries = false;
+
 const apiProxy = {
     async getAll() {
-        const cachedCountries = cache.getCountries();
-
-        if (cachedCountries.length > 0) {
-            return cachedCountries;
+        if (cachedCountries){
+            return cache.getCountries();
         }
 
         const countries = await api.getAll();
+        cachedCountries = true;
         cache.setCountries(countries);
 
         return countries;
     },
 
     async get(code) {
-        const country = cache.getCountry(code);
+        const cachedCountry = cache.getCountry(code);
 
-        if (country !== null) {
-            return country;
+        if (cachedCountry !== null && cachedCountry.expireTime > new Date().getTime()){
+            return cachedCountry;
         }
 
-        return api.get(code);
+        const country = await api.get(code);
+        cache.addCountry(country);
+
+        return country;
     }
 };
 

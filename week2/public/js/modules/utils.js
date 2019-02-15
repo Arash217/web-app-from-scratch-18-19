@@ -1,3 +1,5 @@
+/* TODO geen innerhtml gebruiken */
+
 const utils = {
     getElement(selector) {
         return document.querySelector(selector);
@@ -18,6 +20,10 @@ const utils = {
                 fn.apply(this, args);
             }, wait);
         };
+    },
+
+    isExpired(){
+
     }
 };
 
