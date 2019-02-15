@@ -21,7 +21,7 @@ const apiProxy = {
     async get(code) {
         const cachedCountry = cache.getCountry(code);
 
-        if (cachedCountry !== null && cachedCountry.expireTime > new Date().getTime()){
+        if (cachedCountry !== null && cachedCountry.expiresIn > new Date().getTime()){
             return cachedCountry;
         }
 

@@ -7,7 +7,7 @@ const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 const addDateToCountry = country => {
     const now = new Date();
     now.setHours(now.getHours() + 1);
-    country.expireTime = now.getTime();
+    country.expiresIn = now.getTime();
     return country;
 };
 
