@@ -4,16 +4,16 @@ import utils from './utils.js';
 
 /* Used the proxy pattern for caching data */
 
-let cachedCountries = false;
+let countriesCached = false;
 
 const apiProxy = {
     async getAll() {
-        if (cachedCountries){
+        if (countriesCached){
             return cache.getCountries();
         }
 
         const countries = await api.getAll();
-        cachedCountries = true;
+        countriesCached = true;
         cache.setCountries(countries);
 
         return cache.getCountries();

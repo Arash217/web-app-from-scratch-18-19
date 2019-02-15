@@ -1,5 +1,3 @@
-/* TODO geen innerhtml gebruiken */
-
 const utils = {
     getElement(selector) {
         return document.querySelector(selector);
@@ -9,7 +7,14 @@ const utils = {
         const element = this.getElement(toElement);
         const template = this.getElement(templateId).innerHTML;
         const compiledTemplate = Handlebars.compile(template);
-        element.innerHTML = compiledTemplate(data);
+        this.removeChildrenInElement(element);
+        element.insertAdjacentHTML('beforeend', compiledTemplate(data));
+    },
+
+    removeChildrenInElement(element) {
+        while (element.firstChild) {
+            element.firstChild.remove();
+        }
     },
 
     debounce(fn, wait) {
