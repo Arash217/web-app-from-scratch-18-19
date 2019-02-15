@@ -1,6 +1,7 @@
 import api from './api.js';
 import cache from './cache.js';
 
+/* TODO new caching strategy */
 /* Used the proxy pattern for caching data */
 
 const apiProxy = {

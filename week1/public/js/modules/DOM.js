@@ -1,5 +1,7 @@
 import utils from './utils.js';
 
+/* TODO (re)render only the data */
+
 const MAIN_ELEMENT = 'main';
 const SEARCH_INPUT_ID = 'search-input';
 const SORT_BUTTON_ID = 'sort-button';
