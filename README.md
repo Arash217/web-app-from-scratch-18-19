@@ -54,14 +54,11 @@ TODO
 - Constanten en variabelen bovenaan definiëren
 - Proxy pattern voor caching
 
-<!--
-
 ### Wishlist
 
-TODO
+- [x] Caching
+- [ ] Error handling 
 
- -->
- 
 ### Actordiagram
  
 ![Actor diagram](../master/diagrams/actor-diagram.jpg)
