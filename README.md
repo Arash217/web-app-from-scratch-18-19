@@ -48,9 +48,9 @@ TODO
 
 ### Gebruikte design patterns en best practices
 
-- Strict mode
-- IIFE
-- Constanten gebruiken om niet bedoelde overschrijvingen te voorkomen
+-  ̶S̶t̶r̶i̶c̶t̶ ̶m̶o̶d̶e̶ (not needed with ES6 modules)
+-  ̶I̶I̶F̶E̶ (not needed with ES6 modules)
+- Constanten gebruiken om onbedoelde overschrijvingen te voorkomen
 - CamelCase
 - Constanten en variabelen bovenaan definiëren
 
