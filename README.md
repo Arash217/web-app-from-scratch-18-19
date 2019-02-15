@@ -22,7 +22,14 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 ### Doel van de app
 
-Gegevens van landen worden middels een API opgehaald en vervolgens getoond.
+Gegevens van landen tonen.
+
+### Features
+
+- Landen overzicht
+- Land details
+- Landen filteren
+- Landen sorteren
 
 ### Gebruikte API
 
@@ -45,6 +52,7 @@ TODO
 - Constanten gebruiken om onbedoelde overschrijvingen te voorkomen
 - CamelCase
 - Constanten en variabelen bovenaan definiëren
+- Proxy pattern voor caching
 
 <!--
 
