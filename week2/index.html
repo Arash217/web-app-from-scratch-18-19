@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <main></main>
+
+    <script id="homeTemplate" type="text/x-handlebars-template">
+        <div id="search-input-container">
+            <input type="text" id="search-input" placeholder="Search for a country...">
+        </div>
+        <button id="sort-button">Sort</button>
+
+        <div id="countries">
+            {{#each this}}
+
+            <a href="#countries/{{alpha2Code}}">
+                <div class="country">
+                    <img src="{{flag}}">
+                    <p>{{name}}</p>
+                </div>
+            </a>
+
+            {{/each}}
+        </div>
+    </script>
+
+    <script id="detailsTemplate" type="text/x-handlebars-template">
+        <nav>
+            <a href="#home">Go back</a>
+        </nav>
+        <div class="details-container">
+            <h1 class="country-title">{{name}}</h1>
+            <img src="{{flag}}" class="country-flag">
+            <div>
+                <div>
+                    <span>Capital</span>
+                    <span>{{capital}}</span>
+                </div>
+                <div>
+                    <span>Region</span>
+                    <span>{{region}}</span>
+                </div>
+                <div>
+                    <span>Subregion</span>
+                    <span>{{subregion}}</span>
+                </div>
+                <div>
+                    <span>Lat/long</span>
+                    <span>{{latlng}}</span>
+                </div>
+
+                {{#each this.timezones}}
+                    <div>
+                        <span>{{this}}</span>
+                    </div>
+                {{/each}}
+
+                {{#each this.currencies}}
+                    <div>
+                        <div>
+                            <span>Code</span>
+                            <span>{{this.code}}</span>
+                        </div>
+                        <div>
+                            <span>Name</span>
+                            <span>{{this.name}}</span>
+                        </div>
+                        <div>
+                            <span>Symbol</span>
+                            <span>{{this.symbol}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+
+                {{#each this.languages}}
+                    <div>
+                        <div>
+                            <span>Name</span>
+                            <span>{{this.name}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+    <script type="module" src="public/js/app.js"></script>
+</body>
+</html>
