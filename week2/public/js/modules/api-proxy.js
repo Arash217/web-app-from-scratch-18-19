@@ -1,7 +1,6 @@
 import api from './api.js';
 import cache from './cache.js';
 
-/* TODO new caching strategy */
 /* Used the proxy pattern for caching data */
 
 let cachedCountries = false;
@@ -16,7 +15,7 @@ const apiProxy = {
         cachedCountries = true;
         cache.setCountries(countries);
 
-        return countries;
+        return cache.getCountries();
     },
 
     async get(code) {
