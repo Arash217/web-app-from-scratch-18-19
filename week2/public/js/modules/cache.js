@@ -7,11 +7,11 @@ const cache = {
 
     setCountries(countries) {
         if (cachedCountries.length > 0) {
-            const countryInCache = (country) => {
+            const isCountryInCache = country => {
                 return cachedCountries.some(cachedCountry => cachedCountry.alpha2Code !== country.alpha2Code);
             };
 
-            const filteredCountries = countries.filter(country => countryInCache(country));
+            const filteredCountries = countries.filter(country => isCountryInCache(country));
             cachedCountries = [...filteredCountries, ...cachedCountries];
 
             return

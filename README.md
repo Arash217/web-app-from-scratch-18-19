@@ -52,6 +52,7 @@ TODO
 - Constanten gebruiken om onbedoelde overschrijvingen te voorkomen
 - CamelCase
 - Constanten en variabelen bovenaan definiëren
+- Avoid Else, Return Early
 - Proxy pattern voor caching
 
 ### Wishlist

@@ -22,8 +22,8 @@ const utils = {
         };
     },
 
-    isExpired(){
-
+    isExpired(epochTime){
+        return new Date().getTime() > epochTime;
     }
 };
 

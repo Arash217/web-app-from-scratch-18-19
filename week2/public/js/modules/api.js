@@ -4,10 +4,10 @@ const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 /* TODO map toepassen */
 /* TODO ergens reduce toepassen */
 
-const addDateToCountry = country => {
+const addExpirationDate = country => {
     const now = new Date();
     now.setHours(now.getHours() + 1);
-    country.expiresIn = now.getTime();
+    country.expirationDate = now.getTime();
     return country;
 };
 
@@ -20,7 +20,7 @@ const api = {
     async get(code) {
         const response = await fetch(`${BASE_API_URL}/alpha/${code}?fields=name;alpha2Code;flag;capital;region;subregion;latlng;timezones;currencies;languages`);
         const country = await response.json();
-        return addDateToCountry(country);
+        return addExpirationDate(country);
     }
 };
 
