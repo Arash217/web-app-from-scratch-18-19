@@ -24,19 +24,15 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 Gegevens van landen worden middels een API opgehaald en vervolgens getoond.
 
-<!--
-
 ### Actordiagram
 
-TODO
-
- -->
+![Actor diagram](../master/diagrams/actor-diagram.jpg)
 
 ### Gebruikte API
 
 URL: https://restcountries.eu/
 
-API Beperkingen zijn niet beschreven in de documentatie.
+API Beperkingen staan niet beschreven in de documentatie.
 
 <!--
 
