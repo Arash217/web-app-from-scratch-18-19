@@ -87,3 +87,7 @@ nav {
 .country-flag {
     max-width: 100%;
 }
+
+.invisible {
+    display: none;
+}

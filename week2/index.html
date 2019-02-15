@@ -7,60 +7,75 @@
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
-    <main></main>
 
-    <script id="homeTemplate" type="text/x-handlebars-template">
+    <!-- Start of home page -->
+    <div id="home-page" class="invisible">
         <div id="search-input-container">
             <input type="text" id="search-input" placeholder="Search for a country...">
         </div>
         <button id="sort-button">Sort</button>
 
-        <div id="countries">
-            {{#each this}}
+        <!-- Home page template will be rendered in this div -->
+        <div id="home-page-content"></div>
 
-            <a href="#countries/{{alpha2Code}}">
-                <div class="country">
-                    <img src="{{flag}}">
-                    <p>{{name}}</p>
-                </div>
-            </a>
+        <!-- Handlebars template -->
+        <script id="homeTemplate" type="text/x-handlebars-template">
+            <div id="countries">
+                {{#each this}}
 
-            {{/each}}
-        </div>
-    </script>
+                <a href="#countries/{{alpha2Code}}">
+                    <div class="country">
+                        <img src="{{flag}}">
+                        <p>{{name}}</p>
+                    </div>
+                </a>
 
-    <script id="detailsTemplate" type="text/x-handlebars-template">
+                {{/each}}
+            </div>
+        </script>
+    </div>
+
+    <!-- End of home page -->
+
+    <!-- Start of details page -->
+
+    <div id="details-page" class="invisible">
         <nav>
             <a href="#home">Go back</a>
         </nav>
-        <div class="details-container">
-            <h1 class="country-title">{{name}}</h1>
-            <img src="{{flag}}" class="country-flag">
-            <div>
-                <div>
-                    <span>Capital</span>
-                    <span>{{capital}}</span>
-                </div>
-                <div>
-                    <span>Region</span>
-                    <span>{{region}}</span>
-                </div>
-                <div>
-                    <span>Subregion</span>
-                    <span>{{subregion}}</span>
-                </div>
-                <div>
-                    <span>Lat/long</span>
-                    <span>{{latlng}}</span>
-                </div>
+        <!-- Details page template will be rendered in this div -->
+        <div id="details-page-content"></div>
 
-                {{#each this.timezones}}
+        <!-- Handlebars template -->
+        <script id="detailsTemplate" type="text/x-handlebars-template">
+            <div class="details-container">
+                <h1 class="country-title">{{name}}</h1>
+                <img src="{{flag}}" class="country-flag">
+                <div>
+                    <div>
+                        <span>Capital</span>
+                        <span>{{capital}}</span>
+                    </div>
+                    <div>
+                        <span>Region</span>
+                        <span>{{region}}</span>
+                    </div>
+                    <div>
+                        <span>Subregion</span>
+                        <span>{{subregion}}</span>
+                    </div>
+                    <div>
+                        <span>Lat/long</span>
+                        <span>{{latlng}}</span>
+                    </div>
+
+                    {{#each this.timezones}}
                     <div>
                         <span>{{this}}</span>
                     </div>
-                {{/each}}
+                    {{/each}}
 
-                {{#each this.currencies}}
+                    {{#each this.currencies}}
                     <div>
                         <div>
                             <span>Code</span>
@@ -75,19 +90,20 @@
                             <span>{{this.symbol}}</span>
                         </div>
                     </div>
-                {{/each}}
+                    {{/each}}
 
-                {{#each this.languages}}
+                    {{#each this.languages}}
                     <div>
                         <div>
                             <span>Name</span>
                             <span>{{this.name}}</span>
                         </div>
                     </div>
-                {{/each}}
+                    {{/each}}
+                </div>
             </div>
-        </div>
-    </script>
+        </script>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>

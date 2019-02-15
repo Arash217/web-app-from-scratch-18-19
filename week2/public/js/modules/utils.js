@@ -12,15 +12,6 @@ const utils = {
         element.innerHTML = compiledTemplate(data);
     },
 
-    async renderTemplate2(data, templatePath, toElement) {
-        const response = await fetch(templatePath);
-        const template = await response.text();
-        console.log(template)
-        const element = this.getElement(toElement);
-        const compiledTemplate = Handlebars.compile(template);
-        element.innerHTML = compiledTemplate(data);
-    },
-
     debounce(fn, wait) {
         let timeout;
         return (...args) => {
@@ -33,11 +24,6 @@ const utils = {
 
     isExpired(epochTime) {
         return new Date().getTime() > epochTime;
-    },
-
-    async getHandleBarsTemplate(path) {
-        const response = await fetch(path);
-        return response.text();
     }
 };
 

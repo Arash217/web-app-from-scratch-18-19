@@ -1,52 +1,52 @@
 import utils from './utils.js';
 
-/* TODO (re)render only the data */
+const pages = {
+    home: {
+        id: '#home-page',
+        contentId: '#home-page-content',
+        templateId: '#homeTemplate'
+    },
 
-const MAIN_ELEMENT = 'main';
-const SEARCH_INPUT_ID = 'search-input';
-const SORT_BUTTON_ID = 'sort-button';
-const HOME_TEMPLATE_ID = '#homeTemplate';
-const DETAILS_TEMPLATE_ID = '#detailsTemplate';
+    details: {
+        id: '#details-page',
+        contentId: '#details-page-content',
+        templateId: '#detailsTemplate'
+    }
+};
 
 let _countries = [];
 let searchString = '';
 let sortAscending = true;
-
-const getMainElement = () => {
-    return utils.getElement(MAIN_ELEMENT);
-};
-
-const getSearchInput = () => {
-    return utils.getElement(`#${SEARCH_INPUT_ID}`);
-};
+let initialisedListeners = false;
 
 const findCountries = (countries, string) => {
     return countries.filter(country => country.name.toLowerCase().includes(string.toLowerCase()));
 };
 
-const sortCountries = (countries, sortAscending) => {
-    return sortAscending ? countries : [...countries].reverse();
+const sortCountries = countries => {
+    return countries.sort((countryA, countryB) => {
+        if (sortAscending){
+            return countryA.name.localeCompare(countryB.name);
+        }
+        return countryB.name.localeCompare(countryA.name);
+    })
 };
 
 const renderCountries = countries => {
-    utils.renderTemplate(countries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
-    const newSearchInput = getSearchInput();
-    newSearchInput.value = searchString;
+    utils.renderTemplate(countries, pages.home.templateId, pages.home.contentId);
 };
 
 const filter = () => {
     const foundCountries = findCountries(_countries, searchString);
-    const filteredCountries = sortCountries(foundCountries, sortAscending);
-    renderCountries(filteredCountries);
+    const sortedCountries = sortCountries(foundCountries);
+    renderCountries(sortedCountries);
 };
 
 const addSearchInputEventListener = element => {
-    const inputEventHandler = ({target: {id}}) => {
-        if (id === SEARCH_INPUT_ID) {
-            const {value} = getSearchInput();
+    const inputEventHandler = ({target: {id, value}}) => {
+        if (id === 'search-input') {
             searchString = value;
             filter();
-            getSearchInput().focus();
         }
     };
 
@@ -55,7 +55,7 @@ const addSearchInputEventListener = element => {
 
 const addSortButtonEventListener = element => {
     const clickEventHandler = ({target: {id}}) => {
-        if (id === SORT_BUTTON_ID) {
+        if (id === 'sort-button') {
             sortAscending = !sortAscending;
             filter();
         }
@@ -64,22 +64,39 @@ const addSortButtonEventListener = element => {
     element.addEventListener('click', clickEventHandler);
 };
 
-const initEventListeners = () => {
-    const main = getMainElement();
-    addSearchInputEventListener(main);
-    addSortButtonEventListener(main);
+const initEventListeners = element => {
+    addSearchInputEventListener(element);
+    addSortButtonEventListener(element);
+};
+
+const displayPage = id => {
+    for (let name in pages) {
+        const page = pages[name];
+        const element = utils.getElement(page.id);
+
+        if (id !== page.id) {
+            element.classList.add('invisible');
+            continue;
+        }
+        element.classList.remove('invisible');
+    }
 };
 
 const DOM = {
-    async renderHomePage(countries) {
-        // utils.renderTemplate(countries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
-       // _countries = countries;
-       // initEventListeners();
-        utils.renderTemplate2(countries, 'public/js/modules/templates/home-template.handlebars', MAIN_ELEMENT);
+    renderHomePage(countries) {
+        displayPage(pages.home.id);
+        _countries = sortCountries(countries);
+        utils.renderTemplate(_countries, pages.home.templateId, pages.home.contentId);
+
+        if (!initialisedListeners){
+            initEventListeners(utils.getElement(pages.home.id));
+            initialisedListeners = true;
+        }
     },
 
     renderDetailsPage(country) {
-        utils.renderTemplate(country, DETAILS_TEMPLATE_ID, MAIN_ELEMENT);
+        displayPage(pages.details.id);
+        utils.renderTemplate(country, pages.details.templateId, pages.details.contentId);
     }
 };
 
