@@ -26,8 +26,8 @@ Gegevens van landen tonen.
 
 ### Features
 
-- Landen overzicht pagina
-- Land details pagina
+- Overzichtpagina
+- Detailpagina
 - Landen filteren
 - Landen sorteren
 
