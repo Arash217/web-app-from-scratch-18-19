@@ -71,10 +71,11 @@ const initEventListeners = () => {
 };
 
 const DOM = {
-    renderHomePage(countries) {
-        utils.renderTemplate(countries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
-        _countries = countries;
-        initEventListeners();
+    async renderHomePage(countries) {
+        // utils.renderTemplate(countries, HOME_TEMPLATE_ID, MAIN_ELEMENT);
+       // _countries = countries;
+       // initEventListeners();
+        utils.renderTemplate2(countries, 'public/js/modules/templates/home-template.handlebars', MAIN_ELEMENT);
     },
 
     renderDetailsPage(country) {
