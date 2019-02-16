@@ -4,6 +4,7 @@ const utils = {
     },
 
     renderTemplate(data, templateId, toElement) {
+        console.log(data);
         const element = this.getElement(toElement);
         const template = this.getElement(templateId).innerHTML;
         const compiledTemplate = Handlebars.compile(template);

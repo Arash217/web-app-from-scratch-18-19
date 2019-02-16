@@ -1,10 +1,19 @@
-import utils from "../utils";
+import utils from "../utils.js";
 
-const dom = {
-    render(page, data) {
-        displayPage(page.id);
-        page.data = {...page.data, ...data};
-        utils.renderTemplate(data, page.templateId, page.contentId);
-        initEventListeners(page);
+class DOM {
+    initEventListeners() {
+        if (!this.initialisedListeners && this.eventListeners && this.eventListeners.length > 0){
+            const pageElement = utils.getElement(this.id);
+            this.eventListeners.forEach(eventListener => eventListener(pageElement));
+            this.initialisedListeners = true;
+        }
     }
-};
+
+    render(data) {
+        this.data = {...this.data, ...data};
+        utils.renderTemplate(this.data, this.templateId, this.contentId);
+        this.initEventListeners();
+    }
+}
+
+export default DOM;
