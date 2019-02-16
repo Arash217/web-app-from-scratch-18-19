@@ -6,6 +6,8 @@ class Home extends DOM {
         super();
 
         this.id = '#home-page';
+        DOM.registerView(this.id);
+
         this.contentId = '#home-page-content';
         this.templateId = '#homeTemplate';
 
