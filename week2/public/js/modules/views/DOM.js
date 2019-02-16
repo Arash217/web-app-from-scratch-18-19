@@ -14,6 +14,10 @@ class DOM {
         utils.renderTemplate(this.data, this.templateId, this.contentId);
         this.initEventListeners();
     }
+
+    renderContent(data){
+        utils.renderTemplate(data, this.templateId, this.contentId);
+    }
 }
 
 export default DOM;

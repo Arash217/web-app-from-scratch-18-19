@@ -2,7 +2,6 @@ import DOM from './DOM.js';
 import utils from "../utils.js";
 
 class Home extends DOM {
-
     constructor() {
         super();
 
@@ -19,8 +18,8 @@ class Home extends DOM {
             element => {
                 const inputEventHandler = ({target: {id, value}}) => {
                     if (id === 'search-input') {
-                        home.data.searchString = value;
-                        home.filter();
+                        this.data.searchString = value;
+                        this.filter();
                     }
                 };
 
@@ -30,14 +29,14 @@ class Home extends DOM {
             element => {
                 const clickEventHandler = ({target: {id}}) => {
                     if (id === 'sort-button') {
-                        home.data.sortAscending = !home.data.sortAscending;
-                        home.filter();
+                        this.data.sortAscending = !this.data.sortAscending;
+                        this.filter();
                     }
                 };
 
                 element.addEventListener('click', clickEventHandler);
             }
-        ];
+        ]
     }
 
     findCountries(countries, string) {
@@ -54,7 +53,7 @@ class Home extends DOM {
     filter() {
         const foundCountries = this.findCountries(this.data.countries, this.data.searchString);
         const sortedCountries = this.sortCountries(foundCountries, this.data.sortAscending);
-        utils.renderTemplate({countries: sortedCountries}, this.templateId, this.contentId);
+        this.renderContent({countries: sortedCountries});
     }
 }
 
