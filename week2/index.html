@@ -21,7 +21,7 @@
         <!-- Handlebars template -->
         <script id="homeTemplate" type="text/x-handlebars-template">
             <div id="countries">
-                {{#each this}}
+                {{#each this.countries}}
 
                 <a href="#countries/{{alpha2Code}}">
                     <div class="country">
@@ -49,33 +49,33 @@
         <!-- Handlebars template -->
         <script id="detailsTemplate" type="text/x-handlebars-template">
             <div class="details-container">
-                <h1 class="country-title">{{name}}</h1>
-                <img src="{{flag}}" class="country-flag">
+                <h1 class="country-title">{{country.name}}</h1>
+                <img src="{{country.flag}}" class="country-flag">
                 <div>
                     <div>
                         <span>Capital</span>
-                        <span>{{capital}}</span>
+                        <span>{{country.capital}}</span>
                     </div>
                     <div>
                         <span>Region</span>
-                        <span>{{region}}</span>
+                        <span>{{country.region}}</span>
                     </div>
                     <div>
                         <span>Subregion</span>
-                        <span>{{subregion}}</span>
+                        <span>{{country.subregion}}</span>
                     </div>
                     <div>
                         <span>Lat/long</span>
-                        <span>{{latlng}}</span>
+                        <span>{{country.latlng}}</span>
                     </div>
 
-                    {{#each this.timezones}}
+                    {{#each country.timezones}}
                     <div>
                         <span>{{this}}</span>
                     </div>
                     {{/each}}
 
-                    {{#each this.currencies}}
+                    {{#each country.currencies}}
                     <div>
                         <div>
                             <span>Code</span>
@@ -92,7 +92,7 @@
                     </div>
                     {{/each}}
 
-                    {{#each this.languages}}
+                    {{#each country.languages}}
                     <div>
                         <div>
                             <span>Name</span>

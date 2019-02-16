@@ -4,7 +4,7 @@ import DOM from './DOM.js';
 const pages = {
     async home() {
         const countries = await apiProxy.getAll();
-        await DOM.renderHomePage(countries);
+        DOM.renderHomePage(countries);
     },
 
     async details(code) {
