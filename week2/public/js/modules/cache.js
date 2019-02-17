@@ -1,5 +1,7 @@
 let cachedCountries = [];
 
+/* TODO Sort data so it can be displayed properly */
+
 const cache = {
     getCountries() {
         return cachedCountries;

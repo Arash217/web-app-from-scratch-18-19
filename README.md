@@ -58,7 +58,7 @@ TODO
 ### Wishlist
 
 - [x] Caching
-- [ ] Error handling 
+- [ ] PageNotFoundError handling 
 
 ### Actordiagram
  

@@ -15,12 +15,23 @@ class DOM {
         });
     };
 
-    static handleLoading(fn) {
+    static handleError(error) {
+        if (error.status === 404) {
+            this.displayPage('#item-error-page');
+        }
+    }
+
+    static handlePageRequest(fn) {
         return async (...args) => {
             const element = utils.getElement('#loader');
-            element.classList.add('loading');
-            await fn(...args);
-            element.classList.remove('loading');
+            try {
+                element.classList.add('loading');
+                await fn(...args);
+            } catch (e) {
+                this.handleError(e);
+            } finally {
+                element.classList.remove('loading');
+            }
         }
     }
 
@@ -41,6 +52,10 @@ class DOM {
 
     renderContent(data) {
         utils.renderTemplate(data, this.templateId, this.contentId);
+    }
+
+    renderStatic() {
+        DOM.displayPage(this.id);
     }
 }
 

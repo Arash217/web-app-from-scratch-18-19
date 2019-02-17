@@ -29,6 +29,24 @@ const utils = {
 
     isExpired(epochTime) {
         return new Date().getTime() > epochTime;
+    },
+
+    handleFetchErrors(fn) {
+        return async (...args) => {
+            const res = await fn(...args);
+            if (!res.ok) throw await res.json();
+            return res.json();
+        }
+    },
+
+    handleRequestErrors(fn) {
+        return async (...args) => {
+            try {
+                return await fn(...args);
+            } catch (e) {
+                throw e;
+            }
+        }
     }
 };
 
