@@ -1,5 +1,7 @@
 import utils from "../utils.js";
 
+/* TODO error pages samenvoegen, vervolgens met data en template renderen */
+
 class DOM {
 
     static views = [];
