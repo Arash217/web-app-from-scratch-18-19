@@ -1,5 +1,6 @@
 import utils from "../utils.js";
 
+/* TODO id's vervangen door classes, en important weghalen uit css */
 /* TODO error pages samenvoegen, vervolgens met data en template renderen */
 
 class DOM {
