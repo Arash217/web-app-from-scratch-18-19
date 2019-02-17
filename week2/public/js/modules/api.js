@@ -7,11 +7,11 @@ import utils from './utils.js';
 const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 
 const api = {
-    getAll: utils.handleFetchErrors(async () => {
+    getAll: utils.handleFetchErrors( () => {
         return fetch(`${BASE_API_URL}/all?fields=name;alpha2Code;flag`);
     }),
 
-    get: utils.handleFetchErrors(async code => {
+    get: utils.handleFetchErrors( code => {
         return fetch(`${BASE_API_URL}/alpha/${code}?fields=name;alpha2Code;flag;capital;region;subregion;latlng;timezones;currencies;languages`);
     })
 };
