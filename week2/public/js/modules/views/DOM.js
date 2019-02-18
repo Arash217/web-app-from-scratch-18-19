@@ -42,12 +42,12 @@ class DOM {
         return async (...args) => {
             const element = utils.getElement('#loader');
             try {
-                element.classList.add('loading');
+                element.classList.add('spinner');
                 await fn(...args);
             } catch (e) {
                 this.handleError(e);
             } finally {
-                element.classList.remove('loading');
+                element.classList.remove('spinner');
             }
         }
     }
