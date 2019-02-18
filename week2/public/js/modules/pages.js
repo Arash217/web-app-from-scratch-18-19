@@ -2,8 +2,7 @@ import apiProxy from './api-proxy.js';
 import DOM from './views/DOM.js';
 import home from './views/home.js';
 import details from './views/details.js';
-import pageNotFoundError from './views/page-not-found-error.js';
-import './views/item-not-found-error.js';
+import error from './views/error.js';
 
 const pages = {
     home: DOM.handlePageRequest(async () => {
@@ -17,7 +16,7 @@ const pages = {
     }),
 
     pageNotFoundError() {
-        pageNotFoundError.renderStatic();
+        error.render({ errorMessage: 'Page not found' });
     }
 };
 

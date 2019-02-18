@@ -11,19 +11,19 @@
     <!-- Shows spinner while loading -->
     <div id="loader"></div>
 
-    <!-- Start of page not found error page -->
+    <!-- Start of error page -->
     <div id="error-page" class="invisible">
-        <span class="error-message">Requested page not found</span>
-        <a class="error-url" href="#home">Back to home</a>
-    </div>
-    <!-- End of page not found error page -->
 
-    <!-- Start of page not found error page -->
-    <div id="item-error-page" class="invisible">
-        <span class="error-message">Requested item not found</span>
-        <a class="error-url" href="#home">Back to home</a>
+        <!-- Error page template will be rendered in this div -->
+        <div id="error-page-content"></div>
+
+        <!-- Handlebars template -->
+        <script id="error-template" type="text/x-handlebars-template">
+            <span class="error-message">{{this.errorMessage}}</span>
+            <a class="error-url" href="#home">Back to home</a>
+        </script>
     </div>
-    <!-- End of page not found error page -->
+    <!-- End of error page -->
 
     <!-- Start of home page -->
     <div id="home-page" class="invisible">
@@ -122,8 +122,8 @@
         </script>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-    <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+    <script src="public/js/libs/handlebars.min.js"></script>
+    <script src="public/js/libs/director.min.js"></script>
     <script type="module" src="public/js/app.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ const cache = {
             const filteredCountries = countries.filter(country => isCountryInCache(country));
             cachedCountries = [...filteredCountries, ...cachedCountries];
 
-            return
+            return;
         }
         cachedCountries = countries;
     },

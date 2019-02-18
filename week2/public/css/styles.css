@@ -93,7 +93,7 @@ nav {
 }
 
 /* Error */
-#error-page, #item-error-page {
+#error-page-content {
     display: flex;
     align-items: center;
     justify-content: center;

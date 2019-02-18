@@ -5,10 +5,10 @@ class Details extends DOM {
         super();
 
         this.id = '#details-page';
-        DOM.registerView(this.id);
-
         this.contentId = '#details-page-content';
         this.templateId = '#detailsTemplate';
+
+        DOM.registerView(this.id);
     }
 }
 
