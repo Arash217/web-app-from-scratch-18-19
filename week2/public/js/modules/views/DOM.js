@@ -1,7 +1,6 @@
 import utils from "../utils.js";
 
 /* TODO id's vervangen door classes, en important weghalen uit css */
-/* TODO 400 error afhandelen */
 /* TODO ternary naar if met early return? */
 
 class DOM {
@@ -32,8 +31,10 @@ class DOM {
         }
 
         DOM.displayAndRenderTemplate(
-            { errorMessage },
-            '#error-page', '#error-template', '#error-page-content'
+            {errorMessage},
+            '#error-page',
+            '#error-template',
+            '#error-page-content'
         )
     }
 
