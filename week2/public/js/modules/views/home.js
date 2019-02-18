@@ -7,7 +7,7 @@ class Home extends DOM {
 
         this.id = '#home-page';
         this.contentId = '#home-page-content';
-        this.templateId = '#homeTemplate';
+        this.templateId = '#home-template';
 
         DOM.registerView(this.id);
 
