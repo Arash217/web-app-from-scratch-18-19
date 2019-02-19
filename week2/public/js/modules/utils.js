@@ -17,8 +17,8 @@ const utils = {
         }
     },
 
-    URLParametersBuilder(params){
-        return params.reduce((url, param) => url + ';' + param);
+    URLParametersBuilder(params) {
+        return params.reduce((url, param) => `${url};${param}`);
     },
 
     debounce(fn, wait) {
