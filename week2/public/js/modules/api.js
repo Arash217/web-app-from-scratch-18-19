@@ -1,6 +1,6 @@
 import utils from './utils.js';
 
-/* TODO map toepassen */
+/* TODO map ergens toepassen */
 
 const getAllRequiredFields = ['name', 'alpha2Code', 'flag'];
 const getRequiredFields = [
