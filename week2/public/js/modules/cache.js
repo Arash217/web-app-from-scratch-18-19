@@ -1,8 +1,10 @@
 let cachedCountries = [];
 
-/* TODO Sort data so it can be displayed properly */
-
 const cache = {
+    sortCach() {
+        cachedCountries.sort((countryA, countryB) => countryA.name.localeCompare(countryB.name));
+    },
+
     getCountries() {
         return cachedCountries;
     },
@@ -10,13 +12,11 @@ const cache = {
     setCountries(countries) {
         if (cachedCountries.length > 0) {
             const isCountryInCache = country => {
-                return cachedCountries.some(cachedCountry => cachedCountry.alpha2Code !== country.alpha2Code);
+                return cachedCountries.some(cachedCountry => cachedCountry.alpha2Code === country.alpha2Code);
             };
-
-            const filteredCountries = countries.filter(country => isCountryInCache(country));
+            const filteredCountries = countries.filter(country => !isCountryInCache(country));
             cachedCountries = [...filteredCountries, ...cachedCountries];
-
-            return;
+            return this.sortCach();
         }
         cachedCountries = countries;
     },
