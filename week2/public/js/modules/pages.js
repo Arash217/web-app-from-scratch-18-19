@@ -16,7 +16,7 @@ const pages = {
     }),
 
     pageNotFoundError() {
-        error.render({ errorMessage: 'Page not found' });
+        error.render({errorMessage: 'Page not found'});
     }
 };
 

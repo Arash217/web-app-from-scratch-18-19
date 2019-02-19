@@ -1,6 +1,7 @@
 import utils from "../utils.js";
 
 /* TODO id's vervangen door classes, en important weghalen uit css */
+
 /* TODO ternary naar if met early return? */
 
 class DOM {
