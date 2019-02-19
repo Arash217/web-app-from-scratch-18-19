@@ -9,8 +9,8 @@ const getRequiredFields = [
 ];
 
 const BASE_API_URL = 'https://restcountries.eu/rest/v2';
-const getAllURLParameters = utils.URLParametersBuilder(getAllRequiredFields);
-const getURLParameters = utils.URLParametersBuilder(getRequiredFields);
+const getAllURLParameters = utils.URLParameterBuilder(getAllRequiredFields);
+const getURLParameters = utils.URLParameterBuilder(getRequiredFields);
 
 const api = {
     getAll: utils.handleFetchErrors(() => {

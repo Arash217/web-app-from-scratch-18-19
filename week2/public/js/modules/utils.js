@@ -17,7 +17,7 @@ const utils = {
         }
     },
 
-    URLParametersBuilder(params) {
+    URLParameterBuilder(params) {
         return params.reduce((url, param) => `${url};${param}`);
     },
 
@@ -31,8 +31,14 @@ const utils = {
         };
     },
 
-    isExpired(epochTime) {
-        return new Date().getTime() > epochTime;
+    setExpirationDate(obj) {
+        const now = new Date();
+        now.setHours(now.getHours() + 24);
+        obj.expirationDate = now.getTime();
+    },
+
+    isExpired(obj) {
+        return new Date().getTime() > obj.expirationDate;
     },
 
     handleFetchErrors(fn) {
