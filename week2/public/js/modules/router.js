@@ -1,9 +1,9 @@
-import pages from './pages.js';
+import requestHandler from './request-handler.js';
 
 const routes = {
-    'home': pages.home,
-    'countries/:code': pages.details,
-    '*': pages.pageNotFoundError
+    'home': requestHandler.home,
+    'countries/:code': requestHandler.details,
+    '*': requestHandler.pageNotFoundError
 };
 
 const init = () => {

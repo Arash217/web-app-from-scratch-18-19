@@ -59,5 +59,4 @@ class Home extends DOM {
     }
 }
 
-
 export default new Home();

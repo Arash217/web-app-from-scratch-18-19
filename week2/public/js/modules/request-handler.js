@@ -1,10 +1,10 @@
 import apiProxy from './api-proxy.js';
-import DOM from './views/DOM.js';
-import home from './views/home.js';
-import details from './views/details.js';
-import error from './views/error.js';
+import DOM from './pages/DOM.js';
+import home from './pages/home.js';
+import details from './pages/details.js';
+import error from './pages/error.js';
 
-const pages = {
+const requestHandler = {
     home: DOM.handlePageRequest(async () => {
         const countries = await apiProxy.getAll();
         home.render({countries});
@@ -20,4 +20,4 @@ const pages = {
     }
 };
 
-export default pages;
+export default requestHandler;
