@@ -56,7 +56,7 @@ const utils = {
         return data;
     },
 
-    handleRequestErrors(fn) {
+    errorMiddleware(fn) {
         return async (...args) => {
             try {
                 return await fn(...args);

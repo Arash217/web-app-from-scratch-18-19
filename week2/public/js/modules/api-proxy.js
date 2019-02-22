@@ -5,7 +5,7 @@ import utils from './utils.js';
 let countriesCached = false;
 
 const apiProxy = {
-    getAll: utils.handleRequestErrors(async () => {
+    getAll: utils.errorMiddleware(async () => {
         if (countriesCached) {
             return cache.getCountries();
         }
@@ -17,7 +17,7 @@ const apiProxy = {
         return cache.getCountries();
     }),
 
-    get: utils.handleRequestErrors(async code => {
+    get: utils.errorMiddleware(async code => {
         const cachedCountry = cache.getCountry(code);
 
         if (cachedCountry != null && cachedCountry.expirationDate && !utils.isExpired(cachedCountry)) {

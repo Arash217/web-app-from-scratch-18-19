@@ -9,12 +9,12 @@ const getURLParameters = utils.URLParameterBuilder(getRequiredFields);
 const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 
 const api = {
-    getAll: utils.handleRequestErrors(async () => {
+    getAll: utils.errorMiddleware(async () => {
         const data = await utils.fetchRequest(`${BASE_API_URL}/all?fields=${getAllURLParameters}`);
         return utils.extractFromArray(data, getAllRequiredFields);
     }),
 
-    get: utils.handleRequestErrors(async code => {
+    get: utils.errorMiddleware(async code => {
         const data = await utils.fetchRequest(`${BASE_API_URL}/alpha/${code}?fields=${getURLParameters}`);
         return utils.extractFromObject(data, getRequiredFields);
     })
