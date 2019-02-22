@@ -27,17 +27,17 @@ a, a:visited, a:hover, a:active {
     color: inherit;
 }
 
-#search-input-container {
+nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 1em;
     background-color: var(--color1);
     margin-bottom: 1em;
 }
 
-nav {
+#search-input-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1em;
     background-color: var(--color1);
     margin-bottom: 1em;

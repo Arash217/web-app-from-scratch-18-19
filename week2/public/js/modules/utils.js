@@ -17,8 +17,16 @@ const utils = {
         }
     },
 
+    extractFromObject(obj, toExtract) {
+      return toExtract.reduce((o, key) => ({...o, [key]: obj[key]}), {});
+    },
+
+    extractFromArray(arr, toExtract) {
+        return arr.map(obj => this.extractFromObject(obj, toExtract));
+    },
+
     URLParameterBuilder(params) {
-        return params.reduce((url, param) => `${url};${param}`);
+        return params.join(';');
     },
 
     debounce(fn, wait) {
@@ -41,12 +49,11 @@ const utils = {
         return new Date().getTime() > obj.expirationDate;
     },
 
-    handleFetchErrors(fn) {
-        return async (...args) => {
-            const res = await fn(...args);
-            if (!res.ok) throw await res.json();
-            return res.json();
-        }
+    async fetchRequest(URL) {
+        const res = await fetch(URL);
+        const data = await res.json();
+        if (!res.ok) throw data;
+        return data;
     },
 
     handleRequestErrors(fn) {

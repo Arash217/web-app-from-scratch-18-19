@@ -1,24 +1,22 @@
 import utils from './utils.js';
 
-/* TODO map ergens toepassen */
-
 const getAllRequiredFields = ['name', 'alpha2Code', 'flag'];
 const getRequiredFields = [
-    ...getAllRequiredFields,
-    'capital', 'region', 'subregion', 'latlng', 'timezones', 'currencies', 'languages'
+    ...getAllRequiredFields, 'capital', 'region', 'subregion', 'latlng', 'timezones', 'currencies', 'languages'
 ];
-
-const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 const getAllURLParameters = utils.URLParameterBuilder(getAllRequiredFields);
 const getURLParameters = utils.URLParameterBuilder(getRequiredFields);
+const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 
 const api = {
-    getAll: utils.handleFetchErrors(() => {
-        return fetch(`${BASE_API_URL}/all?fields=${getAllURLParameters}`);
+    getAll: utils.handleRequestErrors(async () => {
+        const data = await utils.fetchRequest(`${BASE_API_URL}/all?fields=${getAllURLParameters}`);
+        return utils.extractFromArray(data, getAllRequiredFields);
     }),
 
-    get: utils.handleFetchErrors(code => {
-        return fetch(`${BASE_API_URL}/alpha/${code}?fields=${getURLParameters}`);
+    get: utils.handleRequestErrors(async code => {
+        const data = await utils.fetchRequest(`${BASE_API_URL}/alpha/${code}?fields=${getURLParameters}`);
+        return utils.extractFromObject(data, getRequiredFields);
     })
 };
 

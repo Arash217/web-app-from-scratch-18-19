@@ -2,8 +2,6 @@ import api from './api.js';
 import cache from './cache.js';
 import utils from './utils.js';
 
-/* Used the proxy pattern for caching data */
-
 let countriesCached = false;
 
 const apiProxy = {
