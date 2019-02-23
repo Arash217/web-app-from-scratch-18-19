@@ -8,128 +8,132 @@
 </head>
 <body>
 
-    <!-- Shows spinner while loading -->
-    <div id="loader"></div>
+<!-- Shows spinner while loading -->
+<div id="loader"></div>
 
-    <!-- Start of error page -->
-    <div id="error-page" class="invisible">
+<!-- Start of error page -->
+<div id="error-page" class="invisible">
 
-        <!-- Error page template will be rendered in this div -->
-        <div id="error-page-content"></div>
+    <!-- Error page template will be rendered in this div -->
+    <div id="error-page-content"></div>
 
-        <!-- Handlebars template -->
-        <script id="error-template" type="text/x-handlebars-template">
-            <span class="error-message">{{this.errorMessage}}</span>
-            <a class="error-url" href="#home">Back to home</a>
-        </script>
+    <!-- Handlebars template -->
+    <script id="error-template" type="text/x-handlebars-template">
+        <span class="error-message">{{this.errorMessage}}</span>
+        <a class="error-url" href="#home">Back to home</a>
+    </script>
+</div>
+<!-- End of error page -->
+
+<!-- Start of home page -->
+<div id="home-page" class="invisible">
+    <div id="search-input-container">
+        <input type="text" id="search-input" placeholder="Search for a country...">
     </div>
-    <!-- End of error page -->
-
-    <!-- Start of home page -->
-    <div id="home-page" class="invisible">
-        <div id="search-input-container">
-            <input type="text" id="search-input" placeholder="Search for a country...">
-        </div>
-        <div>
-            <label for="sort-select">Sort by name:</label>
-            <select id="sort-select">
-                <option value="asc">A-Z</option>
-                <option value="desc">Z-A</option>
-            </select>
-        </div>
-
-        <!-- Home page template will be rendered in this div -->
-        <div id="home-page-content"></div>
-
-        <!-- Handlebars template -->
-        <script id="home-template" type="text/x-handlebars-template">
-            <div id="countries">
-                {{#each this.countries}}
-
-                <a href="#countries/{{alpha2Code}}">
-                    <div class="country">
-                        <img src="{{flag}}">
-                        <p>{{name}}</p>
-                    </div>
-                </a>
-
-                {{/each}}
-            </div>
-        </script>
+    <div id="sort-container">
+        <label for="sort-select">Sort by name:</label>
+        <select id="sort-select">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
     </div>
 
-    <!-- End of home page -->
+    <!-- Home page template will be rendered in this div -->
+    <div id="home-page-content"></div>
 
-    <!-- Start of details page -->
+    <!-- Handlebars template -->
+    <script id="home-template" type="text/x-handlebars-template">
+        <div id="countries">
+            {{#each this.countries}}
 
-    <div id="details-page" class="invisible">
-        <nav>
-            <a href="#home">Go back</a>
-        </nav>
-        <!-- Details page template will be rendered in this div -->
-        <div id="details-page-content"></div>
-
-        <!-- Handlebars template -->
-        <script id="details-template" type="text/x-handlebars-template">
-            <div class="details-container">
-                <h1 class="country-title">{{country.name}}</h1>
-                <img src="{{country.flag}}" class="country-flag">
-                <div>
-                    <div>
-                        <span>Capital</span>
-                        <span>{{country.capital}}</span>
-                    </div>
-                    <div>
-                        <span>Region</span>
-                        <span>{{country.region}}</span>
-                    </div>
-                    <div>
-                        <span>Subregion</span>
-                        <span>{{country.subregion}}</span>
-                    </div>
-                    <div>
-                        <span>Lat/long</span>
-                        <span>{{country.latlng}}</span>
-                    </div>
-
-                    {{#each country.timezones}}
-                    <div>
-                        <span>{{this}}</span>
-                    </div>
-                    {{/each}}
-
-                    {{#each country.currencies}}
-                    <div>
-                        <div>
-                            <span>Code</span>
-                            <span>{{this.code}}</span>
-                        </div>
-                        <div>
-                            <span>Name</span>
-                            <span>{{this.name}}</span>
-                        </div>
-                        <div>
-                            <span>Symbol</span>
-                            <span>{{this.symbol}}</span>
-                        </div>
-                    </div>
-                    {{/each}}
-
-                    {{#each country.languages}}
-                    <div>
-                        <div>
-                            <span>Name</span>
-                            <span>{{this.name}}</span>
-                        </div>
-                    </div>
-                    {{/each}}
+            <a href="#countries/{{alpha2Code}}">
+                <div class="country">
+                    <img src="{{flag}}">
+                    <p>{{name}}</p>
                 </div>
-            </div>
-        </script>
-    </div>
+            </a>
 
-    <script src="public/js/libs/handlebars.min.js"></script>
-    <script src="public/js/libs/director.min.js"></script>
-    <script type="module" src="public/js/app.js"></script>
+            {{/each}}
+        </div>
+    </script>
+</div>
+
+<!-- End of home page -->
+
+<!-- Start of details page -->
+
+<div id="details-page" class="invisible">
+    <nav>
+        <a href="#home">Go back</a>
+    </nav>
+    <!-- Details page template will be rendered in this div -->
+    <div id="details-page-content"></div>
+
+    <!-- Handlebars template -->
+    <script id="details-template" type="text/x-handlebars-template">
+        <div class="details-container">
+            <h1 class="country-title">{{country.name}}</h1>
+            <img src="{{country.flag}}" class="country-flag">
+            <table class="country-details">
+                <tr>
+                    <td class="detail-label">Capital</td>
+                    <td>{{country.capital}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Region</td>
+                    <td>{{country.region}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Subregion</td>
+                    <td>{{country.subregion}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Lat/long</td>
+                    <td>
+                        <a class="location-url"
+                           target="_blank"
+                           href="https://www.google.com/maps/@?api=1&map_action=map&zoom=6&basemap=satellite&center={{country.latlng}}">
+                            {{country.latlng}}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Timezones</td>
+                    <td>
+                        {{#each country.timezones}}
+                        <div>
+                            <span>{{this}}</span>
+                        </div>
+                        {{/each}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Currencies</td>
+                    <td>
+                        {{#each country.currencies}}
+                        <div>
+                            <span>{{this.name}} ({{this.symbol}})</span>
+                        </div>
+                        {{/each}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Languages</td>
+                    <td>
+                        {{#each country.languages}}
+                        <div>
+                            <span>{{this.name}}</span>
+                        </div>
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+</div>
+
+<script src="public/js/libs/handlebars.min.js"></script>
+<script src="public/js/libs/director.min.js"></script>
+<script type="module" src="public/js/app.js"></script>
 </body>
 </html>

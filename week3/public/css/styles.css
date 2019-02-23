@@ -56,6 +56,14 @@ nav {
     color: white;
 }
 
+#sort-container {
+    padding: 0 1em 1em 1em;
+}
+
+#home-page-content {
+    padding: 0 1em;
+}
+
 #countries {
     display: grid;
     grid-gap: 1em;
@@ -78,14 +86,39 @@ nav {
 .details-container {
     display: grid;
     justify-content: center;
+    padding: 0 1em 1em 1em;
 }
 
 .country-title {
-    padding: 0.3em 0;
+    padding-bottom: 0.5em;
 }
 
 .country-flag {
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
+}
+
+.country-details {
+    margin: 1em 0;
+    background-color: var(--color3);
+    border-collapse: collapse;
+}
+
+.country-details td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.country-details .detail-label {
+    width: 25%;
+}
+
+.country-details tr:nth-child(even){
+    background-color: var(--color2);
+}
+
+.location-url {
+    text-decoration: underline;
 }
 
 .invisible {
