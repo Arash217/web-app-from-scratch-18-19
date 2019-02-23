@@ -49,7 +49,7 @@ const utils = {
         return new Date().getTime() > obj.expirationDate;
     },
 
-    async fetchRequest(URL) {
+    async request(URL) {
         const res = await fetch(URL);
         const data = await res.json();
         if (!res.ok) throw data;

@@ -8,12 +8,12 @@ const BASE_API_URL = 'https://restcountries.eu/rest/v2';
 
 const api = {
     getAll: utils.errorMiddleware(async () => {
-        const data = await utils.fetchRequest(`${BASE_API_URL}/all?fields=${getAllURLParameters}`);
+        const data = await utils.request(`${BASE_API_URL}/all?fields=${getAllURLParameters}`);
         return utils.extractFromArray(data, getAllFields);
     }),
 
     get: utils.errorMiddleware(async code => {
-        const data = await utils.fetchRequest(`${BASE_API_URL}/alpha/${code}?fields=${getURLParameters}`);
+        const data = await utils.request(`${BASE_API_URL}/alpha/${code}?fields=${getURLParameters}`);
         return utils.extractFromObject(data, getFields);
     })
 };
