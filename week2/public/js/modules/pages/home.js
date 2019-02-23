@@ -29,14 +29,14 @@ class Home extends DOM {
             },
 
             element => {
-                const clickEventHandler = ({target: {id}}) => {
-                    if (id === 'sort-button') {
-                        this.data.sortAscending = !this.data.sortAscending;
+                const sortEventHandler = ({target: {id, value}}) => {
+                    if (id === 'sort-select') {
+                        this.data.sortAscending = value === 'asc';
                         this.filter();
                     }
                 };
 
-                element.addEventListener('click', clickEventHandler);
+                element.addEventListener('change', sortEventHandler);
             }
         ]
     }
