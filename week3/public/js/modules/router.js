@@ -1,9 +1,9 @@
-import requestHandler from './request-handler.js';
+import routerHandler from './router-handler.js';
 
 const routes = {
-    'home': requestHandler.home,
-    'countries/:code': requestHandler.details,
-    '*': requestHandler.pageNotFoundError
+    'home': routerHandler.home,
+    'countries/:code': routerHandler.details,
+    '*': routerHandler.pageNotFoundError
 };
 
 const init = () => {

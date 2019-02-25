@@ -4,7 +4,7 @@ import home from './pages/home.js';
 import details from './pages/details.js';
 import error from './pages/error.js';
 
-const requestHandler = {
+const routerHandler = {
     home: DOM.handlePageRequest(async () => {
         const countries = await apiProxy.getAll();
         home.render({countries});
@@ -20,4 +20,4 @@ const requestHandler = {
     }
 };
 
-export default requestHandler;
+export default routerHandler;
