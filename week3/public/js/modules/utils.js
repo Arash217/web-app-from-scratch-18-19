@@ -9,8 +9,8 @@ export const getElement = selector => {
 };
 
 export const renderTemplate = (data, templateId, toElement) => {
-    const element = this.getElement(toElement);
-    const template = this.getElement(templateId).innerHTML;
+    const element = getElement(toElement);
+    const template = getElement(templateId).innerHTML;
     const compiledTemplate = Handlebars.compile(template);
     removeChildrenInElement(element);
     element.insertAdjacentHTML('beforeend', compiledTemplate(data));
