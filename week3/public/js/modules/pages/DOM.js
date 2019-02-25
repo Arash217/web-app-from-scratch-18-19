@@ -1,5 +1,8 @@
 import {getElement, renderTemplate} from "../utils.js";
 
+/* Used classes for building and rendering pages because inheritance was needed.
+ * Could have used functions for inheritance but classes are cleaner */
+
 class DOM {
     static views = [];
 
