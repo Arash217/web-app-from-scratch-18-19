@@ -1,7 +1,6 @@
 import {getElement, renderTemplate} from "../utils.js";
 
 class DOM {
-
     static views = [];
 
     static registerView(view) {
