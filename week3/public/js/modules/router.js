@@ -1,4 +1,4 @@
-import routeHandler from './route-handler.js';
+import * as routeHandler from './route-handler.js';
 
 const routes = {
     'home': routeHandler.home,
@@ -6,10 +6,6 @@ const routes = {
     '*': routeHandler.pageNotFoundError
 };
 
-const init = () => {
+export const init = () => {
     Router(routes).init('#home');
-};
-
-export default {
-    init
 };

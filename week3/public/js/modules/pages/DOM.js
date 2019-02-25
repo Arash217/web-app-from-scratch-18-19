@@ -1,4 +1,4 @@
-import utils from "../utils.js";
+import {getElement, renderTemplate} from "../utils.js";
 
 class DOM {
 
@@ -10,7 +10,7 @@ class DOM {
 
     static displayPage(id) {
         DOM.views.forEach(view => {
-            const element = utils.getElement(view);
+            const element = getElement(view);
             id === view ? element.classList.remove('invisible') : element.classList.add('invisible');
         });
     };
@@ -37,7 +37,7 @@ class DOM {
 
     static handlePageRequest(fn) {
         return async (...args) => {
-            const element = utils.getElement('#loader');
+            const element = getElement('#loader');
             try {
                 element.classList.add('spinner');
                 await fn(...args);
@@ -51,7 +51,7 @@ class DOM {
 
     initEventListeners() {
         if (!this.initialisedListeners && this.eventListeners && this.eventListeners.length > 0) {
-            const pageElement = utils.getElement(this.id);
+            const pageElement = getElement(this.id);
             this.eventListeners.forEach(eventListener => eventListener(pageElement));
             this.initialisedListeners = true;
         }
@@ -59,7 +59,7 @@ class DOM {
 
     static displayAndRenderTemplate(data, id, templateId, contentId) {
         DOM.displayPage(id);
-        utils.renderTemplate(data, templateId, contentId);
+        renderTemplate(data, templateId, contentId);
     }
 
     render(data) {
@@ -69,7 +69,7 @@ class DOM {
     }
 
     renderContent(data) {
-        utils.renderTemplate(data, this.templateId, this.contentId);
+        renderTemplate(data, this.templateId, this.contentId);
     }
 }
 

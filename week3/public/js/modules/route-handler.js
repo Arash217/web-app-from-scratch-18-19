@@ -1,23 +1,19 @@
-import apiProxy from './api-proxy.js';
+import * as apiProxy from './api-proxy.js';
 import DOM from './pages/DOM.js';
-import home from './pages/home.js';
-import details from './pages/details.js';
-import error from './pages/error.js';
+import homePage from './pages/home.js';
+import detailsPage from './pages/details.js';
+import errorPage from './pages/error.js';
 
-const routeHandler = {
-    home: DOM.handlePageRequest(async () => {
-        const countries = await apiProxy.getAll();
-        home.render({countries});
-    }),
+export const home = DOM.handlePageRequest(async () => {
+    const countries = await apiProxy.getAll();
+    homePage.render({countries});
+});
 
-    details: DOM.handlePageRequest(async code => {
-        const country = await apiProxy.get(code);
-        details.render({country});
-    }),
+export const details = DOM.handlePageRequest(async code => {
+    const country = await apiProxy.get(code);
+    detailsPage.render({country});
+});
 
-    pageNotFoundError() {
-        error.render({errorMessage: 'Page not found'});
-    }
+export const pageNotFoundError = () => {
+    errorPage.render({errorMessage: 'Page not found'});
 };
-
-export default routeHandler;

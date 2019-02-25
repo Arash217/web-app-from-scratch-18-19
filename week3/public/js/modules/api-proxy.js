@@ -1,35 +1,31 @@
-import api from './api.js';
-import cache from './cache.js';
-import utils from './utils.js';
+import * as api from './api.js';
+import * as cache from './cache.js';
+import {errorMiddleware, setExpirationDate, isExpired} from './utils.js';
 
 let countriesCached = false;
 
-const apiProxy = {
-    getAll: utils.errorMiddleware(async () => {
-        if (countriesCached) {
-            return cache.getCountries();
-        }
-
-        const countries = await api.getAll();
-        countriesCached = true;
-        cache.setCountries(countries);
-
+export const getAll = errorMiddleware(async () => {
+    if (countriesCached) {
         return cache.getCountries();
-    }),
+    }
 
-    get: utils.errorMiddleware(async code => {
-        const cachedCountry = cache.getCountry(code);
+    const countries = await api.getAll();
+    countriesCached = true;
+    cache.setCountries(countries);
 
-        if (cachedCountry != null && cachedCountry.expirationDate && !utils.isExpired(cachedCountry)) {
-            return cachedCountry;
-        }
+    return cache.getCountries();
+});
 
-        const country = await api.get(code);
-        utils.setExpirationDate(country);
-        cache.addCountry(country);
+export const get = errorMiddleware(async code => {
+    const cachedCountry = cache.getCountry(code);
 
-        return country;
-    })
-};
+    if (cachedCountry != null && cachedCountry.expirationDate && !isExpired(cachedCountry)) {
+        return cachedCountry;
+    }
 
-export default apiProxy;
+    const country = await api.get(code);
+    setExpirationDate(country);
+    cache.addCountry(country);
+
+    return country;
+});

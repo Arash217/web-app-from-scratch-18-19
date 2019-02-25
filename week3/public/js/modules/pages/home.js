@@ -1,5 +1,5 @@
 import DOM from './DOM.js';
-import utils from "../utils.js";
+import {debounce} from "../utils.js";
 
 class Home extends DOM {
     constructor() {
@@ -25,7 +25,7 @@ class Home extends DOM {
                     }
                 };
 
-                element.addEventListener('input', utils.debounce(inputEventHandler, 300));
+                element.addEventListener('input', debounce(inputEventHandler, 300));
             },
 
             element => {
