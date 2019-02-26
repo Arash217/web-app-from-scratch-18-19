@@ -14,6 +14,6 @@ export const details = DOM.handlePageRequest(async code => {
     detailsPage.render({country});
 });
 
-export const pageNotFoundError = () => {
+export const pageNotFound = () => {
     errorPage.render({errorMessage: 'Page not found'});
 };
