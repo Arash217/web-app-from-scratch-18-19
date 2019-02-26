@@ -62,8 +62,13 @@ TODO
 
 ### Actordiagram
  
-![Actor diagram](../master/diagrams/actor-diagram.jpg)
+ Week 2
+ 
+![Actor diagram](../master/diagrams/actor-diagram-w2.jpg)
 
+Week 3
+
+![Actor diagram](../master/diagrams/actor-diagram-w3.jpg)
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 <!-- Waarom??? -->
