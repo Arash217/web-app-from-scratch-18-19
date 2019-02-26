@@ -1,21 +1,3 @@
-const removeChildrenInElement = element => {
-    while (element.firstChild) {
-        element.firstChild.remove();
-    }
-};
-
-export const getElement = selector => {
-    return document.querySelector(selector);
-};
-
-export const renderTemplate = (data, templateId, toElement) => {
-    const element = getElement(toElement);
-    const template = getElement(templateId).innerHTML;
-    const compiledTemplate = Handlebars.compile(template);
-    removeChildrenInElement(element);
-    element.insertAdjacentHTML('beforeend', compiledTemplate(data));
-};
-
 export const extractFromObject = (obj, toExtract) => {
     return toExtract.reduce((o, key) => ({...o, [key]: obj[key]}), {});
 };

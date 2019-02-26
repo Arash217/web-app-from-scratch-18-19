@@ -1,5 +1,3 @@
-import {getElement, renderTemplate} from "../utils.js";
-
 /* Used classes for building and rendering pages because inheritance was needed.
  * Could have used functions for inheritance but classes are cleaner */
 
@@ -12,7 +10,7 @@ class DOM {
 
     static displayPage(id) {
         DOM.views.forEach(view => {
-            const element = getElement(view);
+            const element = DOM.getElement(view);
             id === view ? element.classList.remove('invisible') : element.classList.add('invisible');
         });
     };
@@ -39,7 +37,7 @@ class DOM {
 
     static handlePageRequest(fn) {
         return async (...args) => {
-            const element = getElement('#loader');
+            const element = DOM.getElement('#loader');
             try {
                 element.classList.add('spinner');
                 await fn(...args);
@@ -53,15 +51,33 @@ class DOM {
 
     initEventListeners() {
         if (!this.initialisedListeners && this.eventListeners && this.eventListeners.length > 0) {
-            const pageElement = getElement(this.id);
+            const pageElement = DOM.getElement(this.id);
             this.eventListeners.forEach(eventListener => eventListener(pageElement));
             this.initialisedListeners = true;
         }
     }
 
+    static removeChildrenInElement(element){
+        while (element.firstChild) {
+            element.firstChild.remove();
+        }
+    }
+
+    static getElement(selector){
+        return document.querySelector(selector);
+    }
+
+    static renderTemplate(data, templateId, toElement){
+        const element = DOM.getElement(toElement);
+        const template = DOM.getElement(templateId).innerHTML;
+        const compiledTemplate = Handlebars.compile(template);
+        DOM.removeChildrenInElement(element);
+        element.insertAdjacentHTML('beforeend', compiledTemplate(data));
+    }
+
     static displayAndRenderTemplate(data, id, templateId, contentId) {
         DOM.displayPage(id);
-        renderTemplate(data, templateId, contentId);
+        DOM.renderTemplate(data, templateId, contentId);
     }
 
     render(data) {
@@ -71,7 +87,7 @@ class DOM {
     }
 
     renderContent(data) {
-        renderTemplate(data, this.templateId, this.contentId);
+        DOM.renderTemplate(data, this.templateId, this.contentId);
     }
 }
 
