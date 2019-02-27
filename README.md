@@ -60,7 +60,7 @@ TODO
 - [x] Caching
 - [x] Error handling
 
-### Actordiagram
+### Actor diagram
  
  Week 2
  
@@ -69,6 +69,20 @@ TODO
 Week 3
 
 ![Actor diagram](../master/diagrams/actor-diagram-w3.jpg)
+
+### Interaction diagram
+
+ Home
+ 
+![Actor diagram](../master/diagrams/home-interaction.jpg)
+
+Details
+
+![Actor diagram](../master/diagrams/details-interaction.jpg)
+
+Search and sort
+
+![Actor diagram](../master/diagrams/search-and-sort-interaction.jpg)
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 <!-- Waarom??? -->
