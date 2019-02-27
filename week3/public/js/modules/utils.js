@@ -1,11 +1,3 @@
-export const extractFromObject = (obj, toExtract) => {
-    return toExtract.reduce((o, key) => ({...o, [key]: obj[key]}), {});
-};
-
-export const extractFromArray = (arr, toExtract) => {
-    return arr.map(obj => extractFromObject(obj, toExtract));
-};
-
 export const URLParameterBuilder = params => {
     return params.join(';');
 };
