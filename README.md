@@ -62,27 +62,37 @@ TODO
 
 ### Actor diagram
  
- Week 2
- 
-![Actor diagram](../master/diagrams/actor-diagram-w2.jpg)
+<details>
+<summary>Week 2</summary>
 
-Week 3
+![Actor diagram](../master/diagrams/actor-diagram-w2.jpg)
+</details>
+
+<details>
+<summary>Week 3</summary>
 
 ![Actor diagram](../master/diagrams/actor-diagram-w3.jpg)
+</details>
 
 ### Interaction diagram
 
- Home
- 
-![Actor diagram](../master/diagrams/home-interaction.jpg)
+<details>
+<summary>Home</summary>
 
-Details
+![Actor diagram](../master/diagrams/home-interaction.jpg)
+</details>
+
+<details>
+<summary>Details</summary>
 
 ![Actor diagram](../master/diagrams/details-interaction.jpg)
+</details>
 
-Search and sort
+<details>
+<summary>Search and sort</summary>
 
 ![Actor diagram](../master/diagrams/search-and-sort-interaction.jpg)
+</details>
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 <!-- Waarom??? -->
