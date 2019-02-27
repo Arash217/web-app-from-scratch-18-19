@@ -9,9 +9,9 @@ class DOM {
     }
 
     static displayPage(id) {
-        DOM.pages.forEach(view => {
-            const element = DOM.getElement(view);
-            id === view ? element.classList.remove('invisible') : element.classList.add('invisible');
+        DOM.pages.forEach(page => {
+            const element = DOM.getElement(page);
+            id === page ? element.classList.remove('invisible') : element.classList.add('invisible');
         });
     };
 
