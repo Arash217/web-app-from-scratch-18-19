@@ -8,7 +8,7 @@ class Details extends DOM {
         this.contentId = '#details-page-content';
         this.templateId = '#details-template';
 
-        DOM.registerView(this.id);
+        DOM.registerPage(this.id);
     }
 }
 

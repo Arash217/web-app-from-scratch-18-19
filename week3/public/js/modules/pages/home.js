@@ -9,7 +9,7 @@ class Home extends DOM {
         this.contentId = '#home-page-content';
         this.templateId = '#home-template';
 
-        DOM.registerView(this.id);
+        DOM.registerPage(this.id);
 
         this.data = {
             searchString: '',

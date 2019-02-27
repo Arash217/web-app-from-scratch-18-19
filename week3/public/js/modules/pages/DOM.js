@@ -4,8 +4,8 @@
 class DOM {
     static views = [];
 
-    static registerView(view) {
-        this.views.push(view);
+    static registerPage(id) {
+        this.views.push(id);
     }
 
     static displayPage(id) {
@@ -57,7 +57,7 @@ class DOM {
         }
     }
 
-    static removeChildrenInElement(element){
+    static removeChildren(element){
         while (element.firstChild) {
             element.firstChild.remove();
         }
@@ -71,7 +71,7 @@ class DOM {
         const element = DOM.getElement(toElement);
         const template = DOM.getElement(templateId).innerHTML;
         const compiledTemplate = Handlebars.compile(template);
-        DOM.removeChildrenInElement(element);
+        DOM.removeChildren(element);
         element.insertAdjacentHTML('beforeend', compiledTemplate(data));
     }
 

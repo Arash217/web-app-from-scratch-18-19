@@ -8,7 +8,7 @@ class Error extends DOM {
         this.contentId = '#error-page-content';
         this.templateId = '#error-template';
 
-        DOM.registerView(this.id);
+        DOM.registerPage(this.id);
     }
 }
 
