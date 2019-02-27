@@ -2,14 +2,14 @@
  * Could have used functions for inheritance but classes are cleaner */
 
 class DOM {
-    static views = [];
+    static pages = [];
 
     static registerPage(id) {
-        this.views.push(id);
+        this.pages.push(id);
     }
 
     static displayPage(id) {
-        DOM.views.forEach(view => {
+        DOM.pages.forEach(view => {
             const element = DOM.getElement(view);
             id === view ? element.classList.remove('invisible') : element.classList.add('invisible');
         });
