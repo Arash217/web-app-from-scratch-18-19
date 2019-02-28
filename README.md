@@ -83,6 +83,7 @@ There aren't any restrictions mentioned in their docs.
 </details>
 
 ## 9. Interaction diagram
+Note: the numbers are used to display the order of method execution.
 
 <details>
 <summary>Home</summary>
