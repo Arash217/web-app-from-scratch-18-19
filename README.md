@@ -6,6 +6,10 @@ A single page application made with the help of [Director](https://github.com/fl
 
 ![Overview](../master/images/app.png)
 
+<!--
+inhoudsopgave
+ -->
+
 ## 1. Live demo
 
 [Week 1 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week1)
@@ -13,6 +17,18 @@ A single page application made with the help of [Director](https://github.com/fl
 [Week 2 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week2)
 
 [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
+
+## 2. Install
+
+Fork and/or clone it. Serve the app from a webserver.
+```bash
+git clone https://github.com/Arash217/web-app-from-scratch-18-19/src
+```
+
+## 3. Restrictions
+
+- The app is made with ES6+ features without transpiling to ES5, and thus isn't production ready. 
+- Currently (28-2-2019) only working with Google Chrome version 72+, because of the use of static class fields.
 
 ### Features
 
