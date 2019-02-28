@@ -1,3 +1,8 @@
+# COUNTRIES OVERVIEW
+
+## Summary
+A single page application made with the help of Directory en Handlebars to show an overview of all countries.
+
 ## Opdrachten
 
 ### Week 1 - Hello API 🐒
