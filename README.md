@@ -45,9 +45,11 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 [REST Countries](https://restcountries.eu) is used to fetch countries data as JSON. 
 The API is used in the overview page to retrieve the name, flag and country code of all countries.
+<br/>
 Additional data is requested in the detail page.
 <br/>
-API restrictions aren't mentioned in their docs.
+<br/>
+There aren't any restrictions mentioned in their docs.
 
 <!--
 
