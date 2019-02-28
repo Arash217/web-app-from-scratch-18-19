@@ -68,7 +68,7 @@ There aren't any restrictions mentioned in their docs.
 - [x] Caching
 - [x] Error handling
 
-### Actor diagram
+## 8. Actor diagram
  
 <details>
 <summary>Week 2</summary>
@@ -82,7 +82,7 @@ There aren't any restrictions mentioned in their docs.
 ![Actor diagram](../master/images/actor-diagram-w3.jpg)
 </details>
 
-### Interaction diagram
+## 9. Interaction diagram
 
 <details>
 <summary>Home</summary>
