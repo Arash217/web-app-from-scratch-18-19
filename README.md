@@ -55,7 +55,7 @@ Additional data is requested and shown in the detail page.
 There aren't any restrictions mentioned in the docs of REST Countries.
 
 ## 7. Best practices & Design patterns
-
+Best practices
 - ~~Strict mode~~ (not needed with ES6 modules)
 - Constants instead of variables
 - CamelCase
@@ -63,7 +63,8 @@ There aren't any restrictions mentioned in the docs of REST Countries.
 - End statements with semicolon
 - Avoid else, return early
 - Single quotes for strings
-
+<br/>
+Design patterns
 + ~~IIFE~~ (not needed with ES6 modules)
 + Proxy pattern for time based cache
 + Template method pattern for rendering pages
