@@ -47,7 +47,7 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 The API is used in the overview page to retrieve and display the name, flag and country code of all countries.
 Additional data is requested and shown in the detail page.
 <br/>
-There aren't any restrictions mentioned in their docs.
+There aren't any restrictions mentioned in the docs of REST Countries.
 
 ## 6. Best practices & Design patterns
 
