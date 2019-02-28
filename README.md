@@ -63,7 +63,7 @@ There aren't any restrictions mentioned in their docs.
 + Proxy pattern for time based cache
 + Template method pattern for rendering pages
 
-### Wishlist
+## 7. Wishlist
 
 - [x] Caching
 - [x] Error handling
