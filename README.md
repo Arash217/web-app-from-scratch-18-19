@@ -47,7 +47,6 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 The API is used in the overview page to retrieve and display the name, flag and country code of all countries.
 Additional data is requested and shown in the detail page.
 <br/>
-<br/>
 There aren't any restrictions mentioned in their docs.
 
 ## 6. Best practices & Design patterns
@@ -59,7 +58,8 @@ There aren't any restrictions mentioned in their docs.
 - End statements with semicolon
 - Avoid else, return early
 - Single quotes for strings
-
+<br/>
+<br/>
 - ~~IIFE~~ (not needed with ES6 modules)
 - Proxy pattern for time based cache
 - Template method pattern for rendering pages
