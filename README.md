@@ -39,8 +39,8 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 ## 5. API
 
-[REST Countries](https://restcountries.eu) API is used to fetch countries data.<br/>
-API restrictions are not mentioned in their docs.
+[REST Countries](https://restcountries.eu) is used to fetch countries data.<br/>
+No API restrictions are mentioned in their docs.
 
 <!--
 
