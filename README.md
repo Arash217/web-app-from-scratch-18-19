@@ -43,7 +43,7 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 ## 5. Wishlist
 
-- [x] Time based cache
+- [x] Time-based cache
 - [x] Error handling
 
 ## 6. API
