@@ -3,31 +3,13 @@
 ## Summary
 A single page application made with the help of Directory en Handlebars to show an overview of all countries.
 
-## Opdrachten
-
-### Week 1 - Hello API 🐒
-
-Doel: Data ophalen uit een API en renderen in een overzichtspagina.
+## 1. Live demo
 
 [Week 1 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week1)
 
-### Week 2 - Design and Refactor 🛠
-
-Doel: Breakdown maken van de web app. Routes en states toevoegen. Detailpagina renderen.
-
 [Week 2 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week2)
 
-### Week 3 - Wrapping up 🎁
-
-Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
-
 [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
-
-## Beschrijving
-
-### Doel van de app
-
-Gegevens van landen tonen.
 
 ### Features
 
