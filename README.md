@@ -63,7 +63,7 @@ Best practices
 - End statements with semicolon
 - Avoid else, return early
 - Single quotes for strings
-<br/>
+
 Design patterns
 + ~~IIFE~~ (not needed with ES6 modules)
 + Proxy pattern for time based cache
