@@ -4,7 +4,7 @@
 
 A single page application made with the help of [Director](https://github.com/flatiron/director) en [Handlebars](https://github.com/wycats/handlebars.js/) to show an overview of all countries.
 
-![Overview](../master/images/app.jpg)
+![Overview](../master/images/app.png)
 
 ## 1. Live demo
 
