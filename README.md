@@ -28,7 +28,7 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 ## 3. Restrictions
 
 - The app is made with ES6+ features without transpiling to ES5, and thus isn't production ready. 
-- Currently (28-2-2019) only working on Google Chrome 72+, because of the use of static class fields.
+- [Currently (28-2-2019) only working on Google Chrome 72+, because of the use of static class fields.](https://kangax.github.io/compat-table/esnext/)
 
 ## 4. Features
 
@@ -37,9 +37,9 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 - Filter countries
 - Sort countries
 
-### Gebruikte API
+## 5. API
 
-URL: https://restcountries.eu/
+https://restcountries.eu/
 
 API Beperkingen staan niet beschreven in de documentatie.
 
