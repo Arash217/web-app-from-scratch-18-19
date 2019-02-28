@@ -2,7 +2,7 @@
 
 ## Summary
 
-A single page application made with the help of Directory en Handlebars to show an overview of all countries.
+A single page application made with the help of [Director](https://github.com/flatiron/director) en [Handlebars](https://github.com/wycats/handlebars.js/) to show an overview of all countries.
 
 ![Actor diagram](../master/images/app.jpg)
 
