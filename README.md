@@ -28,14 +28,14 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 ## 3. Restrictions
 
 - The app is made with ES6+ features without transpiling to ES5, and thus isn't production ready. 
-- Currently (28-2-2019) only working with Google Chrome version 72+, because of the use of static class fields.
+- Currently (28-2-2019) only working on Google Chrome 72+, because of the use of static class fields.
 
 ## 4. Features
 
-- Overzichtpagina
-- Detailpagina
-- Landen filteren
-- Landen sorteren
+- Countries overview 
+- Country details
+- Filter countries
+- Sort countries
 
 ### Gebruikte API
 
