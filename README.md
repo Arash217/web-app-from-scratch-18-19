@@ -101,3 +101,6 @@ There aren't any restrictions mentioned in their docs.
 
 ![Actor diagram](../master/images/search-and-sort-interaction.jpg)
 </details>
+
+## Licence
+MIT © [Arash Paknezad](https://github.com/Arash217)
