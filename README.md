@@ -66,7 +66,7 @@ Best practices:
 
 Design patterns:
 + ~~IIFE~~ (not needed with ES6 modules)
-+ Proxy pattern for time based cache
++ Proxy pattern for time-based cache
 + Template method pattern for rendering pages
 
 ## 8. Actor diagram
