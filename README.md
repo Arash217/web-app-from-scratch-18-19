@@ -59,7 +59,6 @@ There aren't any restrictions mentioned in their docs.
 - Avoid else, return early
 - Single quotes for strings
 <br/>
-<br/>
 - ~~IIFE~~ (not needed with ES6 modules)
 - Proxy pattern for time based cache
 - Template method pattern for rendering pages
