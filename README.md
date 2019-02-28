@@ -18,11 +18,11 @@ inhoudsopgave
 
 [Week 3 live demo](https://arash217.github.io/web-app-from-scratch-18-19/week3)
 
-## 2. Install
+## 2. Usage
 
 Fork and/or clone it. Serve the app from a webserver.
 ```bash
-git clone https://github.com/Arash217/web-app-from-scratch-18-19/src
+git clone https://github.com/Arash217/web-app-from-scratch-18-19
 ```
 
 ## 3. Restrictions
@@ -30,7 +30,7 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19/src
 - The app is made with ES6+ features without transpiling to ES5, and thus isn't production ready. 
 - Currently (28-2-2019) only working with Google Chrome version 72+, because of the use of static class fields.
 
-### Features
+## 4. Features
 
 - Overzichtpagina
 - Detailpagina
