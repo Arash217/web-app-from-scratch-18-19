@@ -1,7 +1,10 @@
 # COUNTRIES OVERVIEW
 
 ## Summary
+
 A single page application made with the help of Directory en Handlebars to show an overview of all countries.
+
+![Actor diagram](../master/images/app.jpg)
 
 ## 1. Live demo
 
@@ -52,13 +55,13 @@ TODO
 <details>
 <summary>Week 2</summary>
 
-![Actor diagram](../master/diagrams/actor-diagram-w2.jpg)
+![Actor diagram](../master/images/actor-diagram-w2.jpg)
 </details>
 
 <details>
 <summary>Week 3</summary>
 
-![Actor diagram](../master/diagrams/actor-diagram-w3.jpg)
+![Actor diagram](../master/images/actor-diagram-w3.jpg)
 </details>
 
 ### Interaction diagram
@@ -66,33 +69,17 @@ TODO
 <details>
 <summary>Home</summary>
 
-![Actor diagram](../master/diagrams/home-interaction.jpg)
+![Actor diagram](../master/images/home-interaction.jpg)
 </details>
 
 <details>
 <summary>Details</summary>
 
-![Actor diagram](../master/diagrams/details-interaction.jpg)
+![Actor diagram](../master/images/details-interaction.jpg)
 </details>
 
 <details>
 <summary>Search and sort</summary>
 
-![Actor diagram](../master/diagrams/search-and-sort-interaction.jpg)
+![Actor diagram](../master/images/search-and-sort-interaction.jpg)
 </details>
-
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-<!-- Waarom??? -->
-
-<!-- Maybe a table of contents here? 📚 -->
-<!-- Echt nodig?? -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
