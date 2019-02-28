@@ -41,7 +41,12 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 - Filter countries
 - Sort countries
 
-## 5. API
+## 5. Wishlist
+
+- [x] Caching
+- [x] Error handling
+
+## 6. API
 
 [REST Countries](https://restcountries.eu) is used to fetch countries data as JSON.
 The API is used in the overview page to retrieve and display the name, flag and country code of all countries.
@@ -49,7 +54,7 @@ Additional data is requested and shown in the detail page.
 <br/>
 There aren't any restrictions mentioned in the docs of REST Countries.
 
-## 6. Best practices & Design patterns
+## 7. Best practices & Design patterns
 
 - ~~Strict mode~~ (not needed with ES6 modules)
 - Constants instead of variables
@@ -62,11 +67,6 @@ There aren't any restrictions mentioned in the docs of REST Countries.
 + ~~IIFE~~ (not needed with ES6 modules)
 + Proxy pattern for time based cache
 + Template method pattern for rendering pages
-
-## 7. Wishlist
-
-- [x] Caching
-- [x] Error handling
 
 ## 8. Actor diagram
  
