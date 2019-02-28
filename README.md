@@ -2,7 +2,11 @@
 
 ## Summary
 
-A single page application made with the help of [Director](https://github.com/flatiron/director) en [Handlebars](https://github.com/wycats/handlebars.js/) to show an overview of all countries.
+A single page application made with the help of 
+[Director](https://github.com/flatiron/director) 
+and 
+[Handlebars](https://github.com/wycats/handlebars.js/) 
+to show an overview of all countries.
 
 ![Overview](../master/images/app.png)
 
@@ -39,8 +43,11 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 ## 5. API
 
-[REST Countries](https://restcountries.eu) is used to fetch countries data.<br/>
-No API restrictions are mentioned in their docs.
+[REST Countries](https://restcountries.eu) is used to fetch countries data as JSON. 
+The API is used in the overview page to retrieve the name, flag and country code of all countries.
+Additional data is requested in the detail page.
+<br/>
+API restrictions aren't mentioned in their docs.
 
 <!--
 
