@@ -50,23 +50,19 @@ Additional data is requested and shown in the detail page.
 <br/>
 There aren't any restrictions mentioned in their docs.
 
-<!--
+## 6. Best practices & Design patterns
 
-### Interaction diagram
-
-TODO
-
- -->
-
-### Gebruikte design patterns en best practices
-
-- ~~Strict mode~~ (niet nodig met ES6 modules)
-- ~~IIFE~~ (niet nodig met ES6 modules)
-- Constanten gebruiken om onbedoelde overschrijvingen te voorkomen
+- ~~Strict mode~~ (not needed with ES6 modules)
+- Constants instead of variables
 - CamelCase
-- Constanten en variabelen bovenaan definiëren
-- Avoid Else, Return Early
-- Proxy pattern voor caching
+- Line length under 80
+- End statements with semicolon
+- Avoid else, return early
+- Single quotes for strings
+
+- ~~IIFE~~ (not needed with ES6 modules)
+- Proxy pattern for time based cache
+- Template method pattern for rendering pages
 
 ### Wishlist
 

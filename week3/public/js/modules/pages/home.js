@@ -1,5 +1,5 @@
 import DOM from './DOM.js';
-import {debounce} from "../utils.js";
+import {debounce} from '../utils.js';
 
 class Home extends DOM {
     constructor() {

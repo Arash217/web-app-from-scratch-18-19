@@ -1,4 +1,4 @@
-import DOM from "./DOM.js";
+import DOM from './DOM.js';
 
 class Error extends DOM {
     constructor() {
