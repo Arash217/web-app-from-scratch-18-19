@@ -39,9 +39,8 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 ## 5. API
 
-https://restcountries.eu/
-
-API Beperkingen staan niet beschreven in de documentatie.
+[REST Countries](https://restcountries.eu) API is used to get countries data.
+No API restrictions has been mentioned in their docs.
 
 <!--
 
