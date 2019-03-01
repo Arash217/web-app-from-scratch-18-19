@@ -45,6 +45,11 @@ git clone https://github.com/Arash217/web-app-from-scratch-18-19
 
 - [x] Time-based cache
 - [x] Error handling
+- [x] ES6 modules
+- [x] ES6 classes
+- [x] Using higher order functions to maximise reusability
+- [] Shorter naming for functions, variables, etc.
+- [] Handlebars templates in separate files
 
 ## 6. API
 
