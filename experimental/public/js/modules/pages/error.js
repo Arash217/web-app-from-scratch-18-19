@@ -7,7 +7,7 @@ class Error extends DOM {
         this.id = '#error-page';
         this.contentId = '#error-page-content';
 
-        DOM.registerPage(this.id);
+        DOM.registerPage(this.id)
     }
 
     template() {
@@ -18,7 +18,7 @@ class Error extends DOM {
     }
 
     shown() {
-        this.render({errorMessage: 'Page not found'})
+        this.render({errorMessage: 'Page not found'});
     }
 }
 

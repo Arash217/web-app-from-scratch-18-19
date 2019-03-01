@@ -61,7 +61,7 @@ class Home extends DOM {
             const countries = await apiProxy.getAll();
             this.render({countries});
         } catch (e) {
-            console.log(e)
+            console.log(e);
         }
     }
 

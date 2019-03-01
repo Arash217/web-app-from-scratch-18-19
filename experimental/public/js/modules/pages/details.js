@@ -80,7 +80,7 @@ class Details extends DOM {
             const country = await apiProxy.get(code);
             this.render({country});
         } catch (e) {
-            console.log(e)
+            console.log(e);
         }
     }
 }
