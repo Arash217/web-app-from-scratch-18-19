@@ -12,8 +12,8 @@ class Error extends DOM {
 
     template() {
         return `
-                <span class="error-message">{{this.errorMessage}}</span>
-                <a class="error-url" href="#countries">Back to home</a>
+            <span class="error-message">{{this.errorMessage}}</span>
+            <a class="error-url" href="#countries">Back to home</a>
         `;
     }
 

@@ -5,6 +5,6 @@ const createDirectorRoutes = routes => {
 };
 
 export const init = routes => {
-    const directoryRoutes = createDirectorRoutes(routes.routes);
-    Router(directoryRoutes).init(routes.routes[0].path);
+    const directorRoutes = createDirectorRoutes(routes.routes);
+    Router(directorRoutes).init(routes.routes[0].path);
 };
