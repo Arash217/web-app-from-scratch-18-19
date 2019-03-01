@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+
+<!-- Shows spinner while loading -->
+<div id="loader"></div>
+
+<!-- Start of error page -->
+<div id="error-page" class="invisible">
+
+    <!-- Error page template will be rendered in this div -->
+    <div id="error-page-content"></div>
+</div>
+<!-- End of error page -->
+
+<!-- Start of home page -->
+<div id="home-page" class="invisible">
+    <div id="search-input-container">
+        <input type="text" id="search-input" placeholder="Search for a country...">
+    </div>
+    <div id="sort-container">
+        <label for="sort-select">Sort by name:</label>
+        <select id="sort-select">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+    </div>
+
+    <!-- Home page template will be rendered in this div -->
+    <div id="home-page-content"></div>
+
+</div>
+<!-- End of home page -->
+
+<!-- Start of details page -->
+<div id="details-page" class="invisible">
+    <nav>
+        <a href="#countries">Go back</a>
+    </nav>
+
+    <!-- Details page template will be rendered in this div -->
+    <div id="details-page-content"></div>
+</div>
+<!-- End of details page -->
+
+<script src="public/js/libs/handlebars.min.js"></script>
+<script src="public/js/libs/director.min.js"></script>
+<script type="module" src="public/js/app.js"></script>
+</body>
+</html>
