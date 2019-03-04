@@ -1,6 +1,7 @@
 import DOM from './DOM.js';
 import {debounce} from '../utils.js';
 import * as apiProxy from "../api-proxy.js";
+import homeLoader from '../templates/home-loader.js';
 
 class Home extends DOM {
     constructor() {
@@ -42,26 +43,31 @@ class Home extends DOM {
     }
 
     template() {
-        return `
-            <div id="countries">
-                {{#each this.countries}}
-                <a href="#countries/{{alpha2Code}}">
-                    <div class="country">
-                        <img src="{{flag}}">
-                        <p>{{name}}</p>
+        return `{{#if this.loading}}
+                    ${homeLoader}
+                {{else}}
+                    <div id="countries">
+                        {{#each this.countries}}
+                        <a href="#countries/{{alpha2Code}}">
+                            <div class="country">
+                                <img src="{{flag}}">
+                                <p>{{name}}</p>
+                            </div>
+                        </a>
+                        {{/each}}
                     </div>
-                </a>
-                {{/each}}
-            </div>
+                {{/if}}
         `;
     }
 
     async shown() {
+        this.render({loading: true});
         try {
-            const countries = await apiProxy.getAll();
-            this.render({countries});
+            this.data.countries = await apiProxy.getAll();
         } catch (e) {
             console.log(e);
+        } finally {
+            this.render({loading: false});
         }
     }
 

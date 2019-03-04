@@ -76,6 +76,7 @@ class Details extends DOM {
     }
 
     async shown(code) {
+        console.log(code);
         try {
             const country = await apiProxy.get(code);
             this.render({country});

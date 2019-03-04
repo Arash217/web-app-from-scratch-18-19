@@ -74,6 +74,7 @@ class DOM {
 
     static renderTemplate(data, template, toElement){
         const element = DOM.getElement(toElement);
+        console.log(template);
         const compiledTemplate = Handlebars.compile(template);
         DOM.removeChildren(element);
         element.insertAdjacentHTML('beforeend', compiledTemplate(data));
@@ -86,12 +87,15 @@ class DOM {
 
     render(data) {
         this.data = {...this.data, ...data};
+
+        const handleBarsTemplate = this.template();
+
         DOM.displayAndRenderTemplate(this.data, this.id, this.template(), this.contentId);
         this.initEventListeners();
     }
 
     renderContent(data) {
-        DOM.renderTemplate(data, this.templateId, this.contentId);
+        DOM.renderTemplate(data, this.template(), this.contentId);
     }
 }
 
